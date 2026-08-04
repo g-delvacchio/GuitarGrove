@@ -8,8 +8,9 @@
 </head>
 <body>
 
-	<header></header>
+	<jsp:include page="view/header.jsp"/>
 
+	<main>
 	<section class="products">
 	
 		<h1>Prodotti in evidenza</h1>
@@ -83,8 +84,10 @@
 		</div>
 	
 	</section>
+	</main>
 	
-	<footer></footer>
+	<jsp:include page="view/footer.jsp"/>
+
 
 </body>
 </html>
