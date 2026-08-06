@@ -28,7 +28,7 @@ public class CatalogoFilter extends HttpServlet {
         String prezzoMin = request.getParameter("prezzoMin");
         String prezzoMax = request.getParameter("prezzoMax");
 
-        //boolean categAll = false;
+        boolean categAll = false;
 
         if (prezzoMin == null || prezzoMin.isBlank())
             prezzoMin = "0";
@@ -55,10 +55,12 @@ public class CatalogoFilter extends HttpServlet {
 
             request.setAttribute("prodotti", prodotti);
 
-            request.getRequestDispatcher("/jsp/catalogo.jsp").forward(request, response);
+            request.getRequestDispatcher("/view/catalogo.jsp").forward(request, response);
 
         } catch (Exception e) {
-            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            //response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+        	e.printStackTrace();
+            throw new ServletException(e);
         }
     }
 
