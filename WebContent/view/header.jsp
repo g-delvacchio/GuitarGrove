@@ -25,7 +25,7 @@
 	
 		<button class="menu-button" id="openMenu">☰</button>
 
-        <form action="<%=request.getContextPath()%>/jsp/catalogo.jsp"
+        <form action="<%=request.getContextPath()%>/view/catalogo.jsp"
               method="GET"
               class="search-form"
               id="searchForm">

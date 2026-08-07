@@ -45,4 +45,3 @@ public class Prodotto {
     public String getImmagine() {return immagine;}
     public void setImmagine(String immagine) {this.immagine = immagine;}
 }
-
