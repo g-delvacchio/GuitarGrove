@@ -96,7 +96,7 @@
 
             <p>
                 Hai già un account?
-                <a href="">Accedi</a>
+                <a href="<%=request.getContextPath()%>/jsp/login.jsp">Accedi</a>
             </p>
 
         </div>
