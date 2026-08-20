@@ -99,6 +99,10 @@
         <%
         } else {
         %>
+        
+        <a href="<%=request.getContextPath()%>/Checkout">
+            Procedi al checkout
+        </a>
 
         <%
             }
