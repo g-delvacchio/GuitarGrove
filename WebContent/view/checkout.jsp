@@ -107,6 +107,36 @@
 
         <h2>Dati pagamento</h2>
         
+        <form id="checkoutForm"
+              action="<%=request.getContextPath()%>/CheckoutControl"
+              method="post">
+
+            <label>Numero carta</label>
+            <input type="text"
+                   id="cardNumber"
+                   name="cardNumber"
+                   maxlength="16"
+                   required>
+            <span id="errorCardNumber"></span><br>
+
+            <label>Scadenza</label>
+            <input type="date"
+                   id="expiry"
+                   name="expiry"
+                   required>
+            <span id="errorExpiry"></span><br>
+
+            <label>CVV</label>
+            <input type="text"
+                   id="cvv"
+                   name="cvv"
+                   maxlength="3"
+                   required>
+            <span id="errorCVV"></span><br>
+
+            <button type="submit">Acquista</button>
+
+        </form>
 
     </div>
 
