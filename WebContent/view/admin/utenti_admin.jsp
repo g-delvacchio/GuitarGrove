@@ -62,7 +62,7 @@
 
         <td>
 
-            <form action="" method="post">
+            <form action="<%=request.getContextPath()%>/DeleteUtenteAdminServlet" method="post">
                 <input type="hidden" name="id" value="<%= us.getUserId() %>">
                 <button type="submit" style="color:red;">
                     Elimina
