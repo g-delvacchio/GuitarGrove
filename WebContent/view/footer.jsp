@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GuitarGrove</title>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/footer.css">
 </head>
 
 <footer>
@@ -11,9 +12,9 @@
         <p>© 2026 GuitarGrove</p>
 
         <div class="footer-links">
-            <a href="<%=request.getContextPath()%>/jsp/chi_siamo.jsp">Chi siamo</a>
+            <a href="<%=request.getContextPath()%>/view/chi_siamo.jsp">Chi siamo</a>
             <span>&nbsp;&nbsp;&nbsp;</span>
-            <a href="<%=request.getContextPath()%>/jsp/assistenza.jsp">Assistenza</a>
+            <a href="<%=request.getContextPath()%>/view/assistenza.jsp">Assistenza</a>
         </div>
     </div>
 
