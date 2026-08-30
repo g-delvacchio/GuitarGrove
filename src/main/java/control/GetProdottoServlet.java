@@ -49,8 +49,7 @@ public class GetProdottoServlet extends HttpServlet {
             request.getRequestDispatcher("/view/prodotto.jsp").forward(request, response);
 
         } catch (Exception e) {
-            //response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-        	e.printStackTrace();
+            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             throw new ServletException(e);
         }
     }

@@ -1,5 +1,3 @@
-
-
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="model.bean.Prodotto, java.util.*" %>
 
@@ -11,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GuitarGrove - Catalogo</title>
 
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
+
 </head>
 
 <body>
@@ -20,7 +20,7 @@
     <main>
     <%
         Collection<Prodotto> prodotti = (Collection<Prodotto>) request.getAttribute("prodotti");
-		
+
         if (prodotti == null) {
             RequestDispatcher dispatcher = application.getRequestDispatcher("/Catalogo");
             dispatcher.forward(request, response);
@@ -66,6 +66,14 @@
                         Tama
                     </option>
 
+                    <option value="Boss" <%= "Boss".equals(request.getParameter("marca")) ? "selected" : "" %>>
+                        Boss
+                    </option>
+
+                    <option value="Shure" <%= "Shure".equals(request.getParameter("marca")) ? "selected" : "" %>>
+                        Shure
+                    </option>
+
                 </select>
 
                 <label>Categoria:</label>
@@ -86,18 +94,33 @@
                         Bassi
                     </option>
 
-                    <option value="Pedaliere" <%= "Pedaliere".equals(request.getParameter("categoria")) ? "selected" : "" %>>
-                        Pedaliere
+                    <option value="Tastiere" <%= "Tastiere".equals(request.getParameter("categoria")) ? "selected" : "" %>>
+                        Tastiere
                     </option>
 
-                    <option value="Casse" <%= "Casse".equals(request.getParameter("categoria")) ? "selected" : "" %>>
-                        Casse
+                    <option value="Batterie" <%= "Batterie".equals(request.getParameter("categoria")) ? "selected" : "" %>>
+                        Batterie
+                    </option>
+
+                    <option value="Percussioni" <%= "Percussioni".equals(request.getParameter("categoria")) ? "selected" : "" %>>
+                        Percussioni
+                    </option>
+
+                    <option value="Amplificatori" <%= "Amplificatori".equals(request.getParameter("categoria")) ? "selected" : "" %>>
+                        Amplificatori
                     </option>
 
                     <option value="Accessori" <%= "Accessori".equals(request.getParameter("categoria")) ? "selected" : "" %>>
                         Accessori
                     </option>
 
+                    <option value="Effetti" <%= "Effetti".equals(request.getParameter("categoria")) ? "selected" : "" %>>
+                        Effetti
+                    </option>
+
+                    <option value="Microfoni" <%= "Microfoni".equals(request.getParameter("categoria")) ? "selected" : "" %>>
+                        Microfoni
+                    </option>
                 </select>
                 <label>Prezzo min:</label>
                 <input type="number" name="prezzoMin"
@@ -112,7 +135,6 @@
 
         </div>
 
-        <!-- PRODOTTI -->
         <div class="product-grid">
 
             <%
@@ -131,7 +153,7 @@
 
                 <p class="price">€ <%= p.getPrezzo() %></p>
 
-                    <a href="">
+                    <a href="<%=request.getContextPath()%>/ProdottoGuitarGrove?id=<%=p.getProductId()%>">
                     Vedi prodotto
                 </a>
 

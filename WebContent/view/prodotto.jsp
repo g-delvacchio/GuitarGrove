@@ -1,17 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="model.bean.Prodotto" %>
 
 <!DOCTYPE html>
-<html>
+<html lang="it">
 
 <%
     Prodotto prodotto = (Prodotto) request.getAttribute("prodotto");
 %>
 
 <head>
-<meta charset="UTF-8">
-<title>GuitarGrove - <%= prodotto.getNome() %></title>
+    <meta charset="UTF-8">
+    <title>GuitarGrove - <%= prodotto.getNome() %></title>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
 </head>
 
 <body>
@@ -50,6 +50,27 @@
             <h2 class="price">
                 € <%= prodotto.getPrezzo() %>
             </h2>
+
+            <% if (prodotto.getStock() > 0) { %>
+
+            <form action="<%=request.getContextPath()%>/Carrello" method="post">
+
+                <input type="hidden" name="action" value="add">
+                <input type="hidden" name="id" value="<%= prodotto.getProductId() %>">
+
+                <button type="submit" class="btn-add-cart">
+                    Aggiungi al carrello
+                </button>
+
+            </form>
+
+            <% } else { %>
+
+            <p style="color:red; font-weight:bold;">
+                Prodotto non disponibile
+            </p>
+
+            <% } %>
 
         </div>
 

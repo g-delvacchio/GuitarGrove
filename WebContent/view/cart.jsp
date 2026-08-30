@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Carrello - GuitarGrvoe</title>
+    <title>Carrello - GuitarGrove</title>
 </head>
 
 <body>
