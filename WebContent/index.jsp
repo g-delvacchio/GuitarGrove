@@ -1,93 +1,251 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
-<meta charset="UTF-8">
-<title>GuitarGrove</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuitarGrove</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
 
-	<jsp:include page="view/header.jsp"/>
+    <jsp:include page="view/header.jsp" />
 
-	<main>
-	<section class="products">
-	
-		<h1>Prodotti in evidenza</h1>
-		
-		<div class="griglia-prodotti">
-		
-			<div class="product">
-                <div class="product-image"><img src=""></img></div>
-                <h3>Modello1</h3>
-                <p>Marca1</p>
+    <main>
+    
+    <section class="featured-products">
+
+        <h1>Prodotti in evidenza</h1>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image"><img src="" alt="Immagine prodotto"></div>
+                <h3>Les Paul Standard 50s</h3>
+                <p>Gibson</p>
                 <p>Chitarra elettrica</p>
-                <p class="price">€ 200</p>
-                <a href="">Vedi prodotto </a>
+                <p class="price">€ 2699.00</p>
+                <a href="<%=request.getContextPath()%>/ProdottoGuitarGrove?id=8">
+                    Vedi prodotto </a>
             </div>
 
-            <div class="product">
-                <div class="product-image"><img src=""></img></div>
-                <h3>Modello2</h3>
-                <p>Marca2</p>
-                <p>Chitarra acustica</p>
-                <p class="price">€ 100</p>
-                <a href="">Vedi prodotto </a>
+            <div class="product-card">
+                <div class="product-image"><img src="" alt="Immagine prodotto"></div>
+                <h3>American Professional II Telecaster</h3>
+                <p>Fender</p>
+                <p>Chitarra elettrica</p>
+                <p class="price">€ 1949</p>
+                <a href="<%=request.getContextPath()%>/ProdottoGuitarGrove?id=4">
+                    Vedi prodotto </a>
             </div>
-            
-            <div class="product">
-                <div class="product-image"><img src=""></img></div>
-                <h3>Modello3</h3>
-                <p>Marca3</p>
-                <p>Chitarra classica</p>
-                <p class="price">€ 80</p>
-                <a href="">Vedi prodotto </a>
+
+            <div class="product-card">
+                <div class="product-image"><img src="" alt="Immagine prodotto"></div>
+                <h3>FP-10</h3>
+                <p>Roland</p>
+                <p>Tastiere</p>
+                <p class="price">€ 499</p>
+                <a href="<%=request.getContextPath()%>/ProdottoGuitarGrove?id=23">
+                    Vedi prodotto </a>
             </div>
-		
-		</div>
-     
-	
-	</section>
-	
-	<section class="categories">
-	
-		<h1>Categorie prodotti</h1>
-		
-		<div class="griglia-categorie">
-		
-			<a href="" class="category">Chitarre Elettriche</a>
-			
-			<a href="" class="category">Pedaliere</a>
-			
-			<a href="" class="category">Accessori</a>
-			
-			<a href="" class="category">Casse</a>
-		
-		</div>
-	
-	</section>
-	
-	<section class="brands">
-	
-		<h1>Brand</h1>
-		
-		<div class="griglia-brand">
-		
-			<a href="" class="category">Yamaha</a>
-			
-			<a href="" class="category">Fender</a>
-			
-			<a href="" class="category">Gibson</a>
-			
-			<a href="" class="category">Roland</a>
-		
-		</div>
-	
-	</section>
-	</main>
-	
-	<jsp:include page="view/footer.jsp"/>
+
+            <div class="product-card">
+                <div class="product-image"><img src="" alt="Immagine prodotto"></div>
+                <h3>KC-200</h3>
+                <p>Roland</p>
+                <p>Amplificatori</p>
+                <p class="price">€ 549</p>
+                <a href="<%=request.getContextPath()%>/ProdottoGuitarGrove?id=26">
+                    Vedi prodotto </a>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image"><img src="" alt="Immagine prodotto"></div>
+                <h3>Roadshow RS525SC</h3>
+                <p>Pearl</p>
+                <p>Batterie</p>
+                <p class="price">€ 699</p>
+                <a href="<%=request.getContextPath()%>/ProdottoGuitarGrove?id=31">
+                    Vedi prodotto </a>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image"><img src="" alt="Immagine prodotto"></div>
+                <h3>CH-1 Super Chorus</h3>
+                <p>Boss</p>
+                <p>Effetti</p>
+                <p class="price">€ 119</p>
+                <a href="<%=request.getContextPath()%>/ProdottoGuitarGrove?id=42">
+                    Vedi prodotto </a>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image"><img src="" alt="Immagine prodotto"></div>
+                <h3>SM58</h3>
+                <p>Shure</p>
+                <p>Microfoni</p>
+                <p class="price">€ 109</p>
+                <a href="<%=request.getContextPath()%>/ProdottoGuitarGrove?id=46">
+                    Vedi prodotto </a>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image"><img src="" alt="Immagine prodotto"></div>
+                <h3>Chitarra Elettrica Stratocaster</h3>
+                <p>Fender</p>
+                <p>Chitarra elettrica</p>
+                <p class="price">€ 799</p>
+                <a href="<%=request.getContextPath()%>/ProdottoGuitarGrove?id=1">
+                    Vedi prodotto </a>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image"><img src="" alt="Immagine prodotto"></div>
+                <h3>SG Standard 1599</h3>
+                <p>Gibson</p>
+                <p>Chitarra elettrica</p>
+                <p class="price">€ 1599</p>
+                <a href="<%=request.getContextPath()%>/ProdottoGuitarGrove?id=10">
+                    Vedi prodotto </a>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image"><img src="" alt="Immagine prodotto"></div>
+                <h3>J-45 Standard'1</h3>
+                <p>Gibson</p>
+                <p>Chitarra Acustica</p>
+                <p class="price">€ 2899</p>
+                <a href="<%=request.getContextPath()%>/ProdottoGuitarGrove?id=12">
+                    Vedi prodotto </a>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image"><img src="" alt="Immagine prodotto"></div>
+                <h3>P-225</h3>
+                <p>Yamaha</p>
+                <p>Tastiere</p>
+                <p class="price">€ 699</p>
+                <a href="<%=request.getContextPath()%>/ProdottoGuitarGrove?id=21">
+                    Vedi prodotto </a>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image"><img src="" alt="Immagine prodotto"></div>
+                <h3>Iron Cobra 900</h3>
+                <p>Tama</p>
+                <p>Accessori</p>
+                <p class="price">€ 469</p>
+                <a href="<%=request.getContextPath()%>/ProdottoGuitarGrove?id=37">
+                    Vedi prodotto </a>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="categories-section">
+
+        <h1>Categorie</h1>
+
+        <div class="categories-grid">
 
 
+            <a href="<%=request.getContextPath()%>/Catalogo?categoria=Chitarre%20Elettriche" class="category-card">
+                <img src="" alt="Chitarre Elettriche">
+                Chitarre Elettriche
+            </a>
+
+            <a href="<%=request.getContextPath()%>/Catalogo?categoria=Chitarre%20Acustiche" class="category-card">
+                <img src="" alt="Chitarre Acustiche">
+                Chitarre Acustiche
+            </a>
+
+            <a href="<%=request.getContextPath()%>/Catalogo?categoria=Bassi" class="category-card">
+                <img src="" alt="Bassi">
+                Bassi
+            </a>
+
+            <a href="<%=request.getContextPath()%>/Catalogo?categoria=Tastiere" class="category-card">
+                <img src="" alt="Tastiere">
+                Tastiere
+            </a>
+
+            <a href="<%=request.getContextPath()%>/Catalogo?categoria=Batterie" class="category-card">
+                <img src="" alt="Batterie">
+                Batterie
+            </a>
+
+            <a href="<%=request.getContextPath()%>/Catalogo?categoria=Percussioni" class="category-card">
+                <img src="" alt="Percussioni">
+                Percussioni
+            </a>
+
+            <a href="<%=request.getContextPath()%>/Catalogo?categoria=Amplificatori" class="category-card">
+                <img src="" alt="Amplificatori">
+                Amplificatori
+            </a>
+
+            <a href="<%=request.getContextPath()%>/Catalogo?categoria=Accessori" class="category-card">
+                <img src="" alt="Accessori">
+                Accessori
+            </a>
+
+            <a href="<%=request.getContextPath()%>/Catalogo?categoria=Effetti" class="category-card">
+                <img src="" alt="Effetti">
+                Effetti
+            </a>
+
+            <a href="<%=request.getContextPath()%>/Catalogo?categoria=Microfoni" class="category-card">
+                <img src="" alt="Microfoni">
+                Microfoni
+            </a>
+
+        </div>
+
+    </section>
+
+        <section class="brands-section">
+
+            <h1>Marche</h1>
+
+            <div class="brands-grid">
+
+                <a href="<%=request.getContextPath()%>/Catalogo?marca=Yamaha" class="brand-card">
+                    <img src="" alt="Yamaha">
+                </a>
+
+                <a href="<%=request.getContextPath()%>/Catalogo?marca=Fender" class="brand-card">
+                    <img src="" alt="Fender">
+                </a>
+
+                <a href="<%=request.getContextPath()%>/Catalogo?marca=Gibson" class="brand-card">
+                    <img src="" alt="Gibson">
+                </a>
+
+                <a href="<%=request.getContextPath()%>/Catalogo?marca=Roland" class="brand-card">
+                    <img src="" alt="Roland">
+                </a>
+
+                <a href="<%=request.getContextPath()%>/Catalogo?marca=Pearl" class="brand-card">
+                    <img src="" alt="Pearl">
+                </a>
+
+                <a href="<%=request.getContextPath()%>/Catalogo?marca=Tama" class="brand-card">
+                    <img src="" alt="Tama">
+                </a>
+
+                <a href="<%=request.getContextPath()%>/Catalogo?marca=Boss" class="brand-card">
+                    <img src="" alt="Boss">
+                </a>
+
+                <a href="<%=request.getContextPath()%>/Catalogo?marca=Shure" class="brand-card">
+                    <img src="" alt="Shure">
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+    <jsp:include page="view/footer.jsp" />
 </body>
 </html>
