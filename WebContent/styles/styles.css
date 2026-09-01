@@ -50,3 +50,22 @@ h1{
 .back-container button:hover {
     background: #81A6C6;
 }
+
+/* PRODUCTS */
+
+.featured-products{
+    padding:10px;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.product-card{
+    background:#F3E3D0;
+    border:1px solid rgba(0,0,0,1);
+    padding:15px;
+    border-radius:10px;
+}
