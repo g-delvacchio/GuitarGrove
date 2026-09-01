@@ -7,6 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <title>I miei ordini - GuitarGrove</title>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
 </head>
 
 <body>

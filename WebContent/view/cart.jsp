@@ -7,6 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Carrello - GuitarGrove</title>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/scripts/style.css">
 </head>
 
 <body>
@@ -46,6 +47,7 @@
             %>
 
             <tr>
+                <td><div class="product-image"><img src="" alt="Immagine prodotto"></div></td>
                 <td><%= p.getNome() %></td>
                 <td><%= qty %></td>
                 <td><%= p.getPrezzo() %> €</td>
@@ -99,7 +101,7 @@
         <%
         } else {
         %>
-        
+
         <a href="<%=request.getContextPath()%>/Checkout">
             Procedi al checkout
         </a>

@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GuitarGrove - Registrazione</title>
-
+    
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
     <script src="<%=request.getContextPath()%>/scripts/validate.js"></script>
 </head>
 

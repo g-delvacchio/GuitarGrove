@@ -1,14 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" language="java"%>
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
-<meta charset="UTF-8">
-<title>GuitarGrove - Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuitarGrove - Login</title>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
+    <script src="<%=request.getContextPath()%>/scripts/validate.js" defer></script>
 </head>
 <body>
 
-<jsp:include page="header.jsp" />
+    <jsp:include page="header.jsp" />
 
     <main class="login">
         <%
@@ -25,19 +27,24 @@
                 <h2>Login</h2>
                 <form id="loginForm"
                       action="<%=request.getContextPath()%>/Login"
-                      method="post">
+                      method="post"
+                      onsubmit="return checkLogin()">
 
                     <label for="email">Email</label>
                     <input type="email"
                            id="email"
-                           name="email">
+                           name="email"
+                           required
+                           oninput="validateLoginEmail()">
 
                     <span id="errorLoginEmail"></span>
 
                     <label for="password">Password</label>
                     <input type="password"
                            id="password"
-                           name="password">
+                           name="password"
+                           required
+                           oninput="validateLoginPassword()">
 
                     <span id="errorLoginPassword"></span>
 
@@ -51,6 +58,5 @@
 
 
     <jsp:include page="footer.jsp" />
-
 </body>
 </html>

@@ -3,6 +3,7 @@
 
 <head>
     <title>Acquisto completato</title>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
 </head>
 <body>
 

@@ -17,3 +17,36 @@ body{
     background: white;
     color:#333;
 }
+
+/* TITOLI */
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+/* PULSANTE TORNA INDIETRO */
+.back-container {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.back-container a {
+    text-decoration: none;
+}
+
+.back-container button {
+    padding: 10px 15px;
+    background: #AACDDC;
+    border: 1px solid rgba(0,0,0,1);
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.back-container button:hover {
+    background: #81A6C6;
+}

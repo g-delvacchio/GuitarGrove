@@ -8,6 +8,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Checkout</title>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
+    <script src="<%=request.getContextPath()%>/scripts/validate.js" defer></script>
 </head>
 
 <body>
@@ -25,7 +27,6 @@
 
 <section class="checkout">
 
-    <!-- BOTTONE TORNA INDIETRO -->
     <div class="back-container">
         <a href="<%=request.getContextPath()%>/Carrello">
             <button type="button">← Torna indietro</button>
@@ -34,7 +35,6 @@
 
     <h1>Checkout</h1>
 
-    <!-- INDIRIZZO -->
     <div class="box">
 
         <h2>Indirizzo</h2>
@@ -55,7 +55,6 @@
 
     </div>
 
-    <!-- CARRELLO -->
     <div class="box">
 
         <h2>Riepilogo ordine</h2>
@@ -102,28 +101,30 @@
 
     </div>
 
-    <!-- PAGAMENTO -->
     <div class="box">
 
         <h2>Dati pagamento</h2>
-        
+
         <form id="checkoutForm"
               action="<%=request.getContextPath()%>/CheckoutControl"
-              method="post">
+              method="post"
+              onsubmit="return checkCheckout(this)">
 
             <label>Numero carta</label>
             <input type="text"
                    id="cardNumber"
                    name="cardNumber"
                    maxlength="16"
-                   required>
+                   required
+                   oninput="validateCardNumber()">
             <span id="errorCardNumber"></span><br>
 
             <label>Scadenza</label>
             <input type="date"
                    id="expiry"
                    name="expiry"
-                   required>
+                   required
+                   oninput="validateExpiry()">
             <span id="errorExpiry"></span><br>
 
             <label>CVV</label>
@@ -131,7 +132,8 @@
                    id="cvv"
                    name="cvv"
                    maxlength="3"
-                   required>
+                   required
+                   oninput="validateCVV()">
             <span id="errorCVV"></span><br>
 
             <button type="submit">Acquista</button>

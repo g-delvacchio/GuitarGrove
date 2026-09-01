@@ -6,6 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Assistenza - GuitarGrove</title>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
 </head>
 
 <body>

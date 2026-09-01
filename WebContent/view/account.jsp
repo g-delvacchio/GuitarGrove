@@ -7,6 +7,8 @@
 
 <head>
     <title>GuitarGrove - Account</title>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
+    <script src="<%=request.getContextPath()%>/scripts/validate.js" defer></script>
 </head>
 
 <body>
@@ -33,7 +35,6 @@
 
     <h1>Benvenuto, <%= user.getNome() %> !</h1>
 
-    <!-- BOTTONE ORDINI -->
     <div style="margin: 15px 0;">
         <form action="<%=request.getContextPath()%>/VisualizzaOrdiniServlet" method="get">
             <button type="submit">
@@ -92,18 +93,19 @@
 
         <form id="changePasswordForm"
               action="<%=request.getContextPath()%>/ChangePasswordServlet"
-              method="post">
+              method="post"
+              onsubmit="return checkChangePassword(this);">
 
             <label>Vecchia password</label>
             <input type="password" name="oldPassword" required>
 
             <label>Nuova password</label>
-            <input type="password" name="newPassword" required>
+            <input type="password" name="newPassword" onkeyup="validateNewPassword()" required>
 
             <span id="errorNewPassword" style="display:block;color:red;margin-bottom:10px;"></span>
 
             <label>Conferma nuova password</label>
-            <input type="password" name="confirmPassword" required>
+            <input type="password" name="confirmPassword" onkeyup="matchNewPassword()" required>
 
             <span id="errorConfirmPassword" style="display:block;color:red;margin-bottom:15px;"></span>
 
@@ -113,14 +115,14 @@
 
     </div>
 
-    <!-- AZIONI -->
     <div class="account-actions">
 
         <form action="<%=request.getContextPath()%>/LogoutServlet" method="post">
             <button type="submit">Logout</button>
         </form>
 
-        <form action="<%=request.getContextPath()%>/DeleteAccountServlet" method="post">
+        <form action="<%=request.getContextPath()%>/DeleteAccountServlet" method="post"
+              onsubmit="return confirm('Sei sicuro di voler eliminare questo account?');">
             <button type="submit" style="color:red;">Elimina Account</button>
         </form>
 
