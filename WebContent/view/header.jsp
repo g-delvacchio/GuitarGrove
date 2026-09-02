@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GuitarGrove</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
+    <script src="<%=request.getContextPath()%>/scripts/menu.js" defer></script>
 </head>
 
 <%
@@ -12,6 +13,10 @@
 %>
 
 <header>
+
+    <script>
+        const contextPath = "<%=request.getContextPath()%>";
+    </script>
 
     <div class="top-header">
 
@@ -59,6 +64,8 @@
             <span>&nbsp;</span>
 
             <button type="submit">Cerca</button>
+
+            <div id="suggestions" class="suggestions"></div>
 
         </form>
     </div>
