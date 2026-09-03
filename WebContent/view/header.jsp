@@ -23,7 +23,7 @@
         <div class="logo-container">
             <div class="logo">
                 <a href="<%=request.getContextPath()%>/index.jsp">
-                    <img src="" alt="GuitarGrove" class="logo-img">
+                    <img src="<%=request.getContextPath()%>/images/logo.png" alt="GuitarGrove" class="logo-img">
                 </a>
             </div>
         </div>
@@ -33,13 +33,13 @@
             <a href="<%=request.getContextPath()%>/<%= (u != null ? "Account" : "view/login.jsp") %>"
                class="icon-user">
 
-                <img src="" alt="Account">
+                <img src="<%=request.getContextPath()%>/images/profilo.png" alt="Account">
             </a>
 
             <a href="<%=request.getContextPath()%>/Carrello"
                class="icon-cart">
 
-                <img src="" alt="Carrello">
+                <img src="<%=request.getContextPath()%>/images/carrello.png" alt="Carrello">
             </a>
 
         </div>

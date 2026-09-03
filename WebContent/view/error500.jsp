@@ -8,7 +8,7 @@
 <jsp:include page="header.jsp"/>
 
 <div class="image-error">
-    <img src="" alt="error500">
+    <img src="<%= request.getContextPath() %>/images/error500.png" alt="error500">
 </div>
 
 <jsp:include page="footer.jsp"/>
