@@ -1,0 +1,117 @@
+/* HEADER */
+
+.top-header {
+    background: #81A6C6;
+    padding: 20px;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.15);
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* wrapper del logo */
+.logo {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* link del logo */
+.logo a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+/* immagine logo */
+.logo-img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+.user-actions {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 20px;
+}
+
+.user-actions a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* ICONE */
+
+.icon-user,
+.icon-cart {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.icon-user img {
+    width: 37px;
+    height: 45px;
+    display: block;
+}
+
+.icon-cart img {
+    width: 42px;
+    height: 42px;
+    display: block;
+}
+
+.icon-user:hover,
+.icon-cart:hover {
+    transform: scale(1.05);
+}
+
+.login-icon:hover {
+    text-decoration: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    /* blocco principale: mai più overflow orizzontale */
+    .top-header {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px;
+        gap: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* logo sempre centrato ma non “bloccante” */
+    .logo-container {
+        flex: 1 1 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo-img {
+        height: 40px;
+    }
+}
