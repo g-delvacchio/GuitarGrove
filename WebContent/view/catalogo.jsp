@@ -135,6 +135,7 @@
 
         </div>
 
+        <!-- PRODOTTI -->
         <div class="product-grid">
 
             <%
@@ -144,7 +145,7 @@
             <div class="product-card">
 
 
-                <div class="product-image"><img src="" alt="Immagine prodotto"></div>
+                <div class="product-image"><img src="<%=request.getContextPath()%>/images/products/<%= p.getImmagine()%>" alt="Immagine prodotto"></div>
 
                 <h3><%= p.getNome()%></h3>
 

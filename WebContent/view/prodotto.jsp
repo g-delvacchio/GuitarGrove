@@ -31,7 +31,7 @@
 
         <div class="product-image-box">
             <div class="product-image-p">
-                <img src="" alt="Immagine prodotto">
+                <img src="<%=request.getContextPath()%>/images/products/<%= prodotto.getImmagine()%>" alt="Immagine prodotto">
             </div>
         </div>
 

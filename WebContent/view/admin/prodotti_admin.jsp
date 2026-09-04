@@ -17,6 +17,7 @@
 
 <head>
     <title>Prodotti Admin</title>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
 </head>
 
 <body>
@@ -52,7 +53,7 @@
     <% for (Prodotto p : prodotti) { %>
 
     <tr>
-        <td><div class="product-image"><img src="" alt="Immagine prodotto"></div></td>
+        <td><div class="product-image"><img src="<%=request.getContextPath()%>/images/products/<%= p.getImmagine()%>" alt="Immagine prodotto"></div></td>
         <td><%= p.getNome() %></td>
         <td><%= p.getMarca() %></td>
         <td><%= p.getModello() %></td>
@@ -90,7 +91,8 @@
 
             <!-- ELIMINA PRODOTTO -->
             <form action="<%=request.getContextPath()%>/DeleteProdottoAdminServlet"
-                  method="post">
+                  method="post"
+                  onsubmit="return confirm('Sei sicuro di voler eliminare questo prodotto?');">
 
                 <input type="hidden" name="id" value="<%= p.getProductId() %>">
 
