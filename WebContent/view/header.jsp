@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/header.css">
     <script src="<%=request.getContextPath()%>/scripts/menu.js" defer></script>
+    <script src="<%=request.getContextPath()%>/scripts/search.js" defer></script>
 </head>
 
 <%
