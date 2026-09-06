@@ -1,0 +1,164 @@
+.cart {
+    flex: 1;
+    padding: 40px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* titolo */
+.cart h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* messaggi */
+.cart p {
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* TABELLA */
+.cart table {
+    width: 100%;
+    max-width: 900px;
+    border-collapse: collapse;
+    background: #F3E3D0;
+    border: 1px solid rgba(0,0,0,1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* celle */
+.cart th,
+.cart td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+/* header tabella */
+.cart th {
+    background: #AACDDC;
+    font-weight: bold;
+}
+
+/* righe hover */
+.cart tr:hover {
+    background: rgba(0,0,0,0.05);
+}
+
+/* bottoni + e - */
+.cart button {
+    padding: 6px 10px;
+    border: 1px solid rgba(0,0,0,1);
+    background: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.cart button:hover {
+    background: #AACDDC;
+}
+
+/* totale */
+.cart h2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+/* link checkout / login */
+.cart a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #AACDDC;
+    border: 1px solid rgba(0,0,0,1);
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.cart a:hover {
+    background: #81A6C6;
+}
+
+/* container azioni inline ( + / - ) */
+.cart td form {
+    display: inline-block;
+    margin: 2px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 654px) {
+
+    .cart {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .cart h1 {
+        font-size: 1.4rem;
+    }
+
+    /* rende la tabella scrollabile invece di "rompersi" */
+    .cart table {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .cart th,
+    .cart td {
+        padding: 8px;
+        font-size: 0.85rem;
+        white-space: nowrap; /* evita che il testo vada a capo e distrugga la riga */
+    }
+
+    /* immagini più compatte */
+    .cart td img {
+        max-width: 60px;
+        height: auto;
+    }
+
+    /* bottoni più piccoli ma cliccabili */
+    .cart button {
+        padding: 5px 8px;
+        font-size: 0.85rem;
+    }
+
+    .cart h2 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .cart a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+}
+
+/*schermi molto piccoli*/
+@media (max-width: 480px) {
+
+    .cart {
+        padding: 10px;
+    }
+
+    .cart th,
+    .cart td {
+        font-size: 0.75rem;
+        padding: 6px;
+    }
+
+    .cart button {
+        padding: 4px 6px;
+        font-size: 0.75rem;
+    }
+}

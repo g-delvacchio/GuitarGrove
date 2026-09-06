@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <title>Carrello - GuitarGrove</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/scripts/style.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/scripts/cart.css">
 </head>
 
 <body>

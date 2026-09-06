@@ -1,0 +1,139 @@
+.account {
+    flex: 1;
+    padding: 40px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* titolo principale */
+.account h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* box generici */
+.account-box {
+    width: 100%;
+    max-width: 700px;
+    background: #F3E3D0;
+    border: 1px solid rgba(0,0,0,1);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* titoli box */
+.account-box h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+/* testi */
+.account-box p {
+    margin: 6px 0;
+    font-size: 1rem;
+}
+
+/* bottone "visualizza ordini" */
+.account button {
+    padding: 10px 15px;
+    background: #AACDDC;
+    border: 1px solid rgba(0,0,0,1);
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.account button:hover {
+    background: #81A6C6;
+}
+
+/* FORM PASSWORD */
+.account form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.account label {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.account input {
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,1);
+    border-radius: 6px;
+    background: white;
+}
+
+/* errori password */
+.account span {
+    font-size: 0.85rem;
+}
+
+/* azioni finali */
+.account-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* bottoni azioni */
+.account-actions button {
+    padding: 10px 15px;
+    border: 1px solid rgba(0,0,0,1);
+    background: #D2C4B4;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.account-actions button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+/* bottone admin */
+.account-actions button[style*="81A6C6"] {
+    background: #81A6C6 !important;
+}
+
+/* delete account evidenziato */
+.account-actions button[style*="red"] {
+    background: #ffdddd !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .account {
+        padding: 20px;
+    }
+
+    .account h1 {
+        font-size: 1.5rem;
+    }
+
+    .account-box {
+        max-width: 95%;
+        padding: 15px;
+    }
+
+    .account-actions {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .account-actions button {
+        width: 100%;
+    }
+};
