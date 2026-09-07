@@ -10,6 +10,7 @@
     <title>GuitarGrove - Catalogo</title>
 
     <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/catalogo.css">
 
 </head>
 

@@ -1,0 +1,71 @@
+/* =========================
+   CATALOGO
+========================= */
+
+.catalog {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* =========================
+   FILTRI
+========================= */
+
+#filtri {
+    background: #F3E3D0;
+    border: 1px solid rgba(0,0,0,1);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#filtri form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(5px, 1fr));
+    gap: 30px;
+    align-items: end;
+}
+
+#filtri label {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#filtri select,
+#filtri input[type="number"] {
+    padding: 5px;
+    border: 1px solid rgba(0,0,0,1);
+    border-radius: 6px;
+    background: white;
+}
+
+#filtri input[type="submit"] {
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,1);
+    background: #AACDDC;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+#filtri input[type="submit"]:hover {
+    background: #81A6C6;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .catalog {
+        padding: 10px;
+    }
+
+    #filtri form {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
