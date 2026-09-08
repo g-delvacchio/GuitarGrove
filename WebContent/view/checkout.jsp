@@ -9,6 +9,7 @@
     <meta charset="UTF-8">
     <title>Checkout</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/checkout.css">
     <script src="<%=request.getContextPath()%>/scripts/validate.js" defer></script>
 </head>
 
