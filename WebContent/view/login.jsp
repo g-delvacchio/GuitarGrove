@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GuitarGrove - Login</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/login.css">
     <script src="<%=request.getContextPath()%>/scripts/validate.js" defer></script>
 </head>
 <body>
