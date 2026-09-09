@@ -12,6 +12,7 @@
     <meta charset="UTF-8">
     <title>GuitarGrove - <%= prodotto.getNome() %></title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/prodotto.css">
 </head>
 
 <body>

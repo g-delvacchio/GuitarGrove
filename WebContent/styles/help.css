@@ -1,0 +1,73 @@
+/* =========================
+   HELP PAGES (ASSISTENZA + CHI SIAMO)
+========================= */
+
+main {
+    flex: 1;
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* TITOLI */
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+
+h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding-bottom: 5px;
+}
+
+/* PARAGRAFI */
+p {
+    margin-bottom: 15px;
+}
+
+/* LISTE (assistenza contatti) */
+ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+ul li {
+    background: #F3E3D0;
+    padding: 10px;
+    margin-bottom: 8px;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 6px;
+}
+
+/* BLOCCO FAQ (assistenza) */
+p strong {
+    display: block;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    main {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    ul li {
+        font-size: 0.95rem;
+    }
+}
