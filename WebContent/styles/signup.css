@@ -1,0 +1,141 @@
+/* ZONA SIGNUP */
+
+.signup{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+    background:white;
+}
+
+/* box centrale */
+.signup section{
+    width:100%;
+    max-width:550px;
+    background:#F3E3D0;
+    border:1px solid rgba(0,0,0,0.15);
+    border-radius:12px;
+    padding:30px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* titolo */
+.signup h2{
+    text-align:center;
+    margin-bottom:20px;
+    font-size:1.6rem;
+}
+
+/* errore */
+.signup p{
+    text-align:center;
+    margin-bottom:15px;
+    font-weight:bold;
+}
+
+/* form layout */
+.signup form{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+/* label */
+.signup label{
+    font-weight:bold;
+    font-size:0.9rem;
+}
+
+/* input e textarea */
+.signup input,
+.signup textarea{
+    padding:10px;
+    border:1px solid rgba(0,0,0,0.2);
+    border-radius:6px;
+    background:white;
+    width:100%;
+}
+
+/* textarea più alta */
+.signup textarea{
+    min-height:70px;
+    resize:vertical;
+}
+
+/* messaggi errori JS */
+.signup span{
+    font-size:0.8rem;
+    color:#b00020;
+    margin-top:-5px;
+}
+
+/* bottone submit */
+.signup input[type="submit"]{
+    margin-top:15px;
+    padding:12px;
+    border:1px solid rgba(0,0,0,0.2);
+    background:#AACDDC;
+    cursor:pointer;
+    font-weight:bold;
+    border-radius:6px;
+    transition:0.2s;
+}
+
+.signup input[type="submit"]:hover{
+    background:#81A6C6;
+}
+
+/* link login */
+.signup a{
+    color:black;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.signup a:hover{
+    text-decoration:underline;
+}
+
+/*RESPONSIVE*/
+@media (max-width: 768px) {
+
+    .signup {
+        padding: 20px;
+        align-items: flex-start;
+    }
+
+    .signup section {
+        max-width: 95%;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .signup h2 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+
+    .signup form {
+        gap: 10px;
+    }
+
+    .signup input,
+    .signup textarea {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .signup textarea {
+        min-height: 90px;
+    }
+
+    .signup input[type="submit"] {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .signup span {
+        font-size: 0.75rem;
+    }
+}

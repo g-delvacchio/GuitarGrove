@@ -7,6 +7,7 @@
     <title>GuitarGrove - Registrazione</title>
     
     <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/signup.css">
     <script src="<%=request.getContextPath()%>/scripts/validate.js"></script>
 </head>
 
