@@ -1,0 +1,86 @@
+/* =========================
+   PAGINA SUCCESS
+========================= */
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* contenitore principale */
+.success {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+/* box messaggio */
+.success-box {
+    background: #F3E3D0;
+    border: 1px solid rgba(0,0,0,1);
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* titolo */
+.success-box h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* testo */
+.success-box p {
+    font-size: 1.1rem;
+}
+
+/* link continua shopping */
+.success-box a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px;
+    background: #AACDDC;
+    border: 1px solid rgba(0,0,0,1);
+    border-radius: 8px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.success-box a:hover {
+    background: #81A6C6;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .success {
+        padding: 20px;
+    }
+
+    .success-box {
+        padding: 20px;
+    }
+
+    .success-box h1 {
+        font-size: 1.5rem;
+    }
+
+    .success-box p {
+        font-size: 1rem;
+    }
+}

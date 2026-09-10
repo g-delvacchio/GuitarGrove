@@ -4,6 +4,7 @@
 <head>
     <title>Acquisto completato</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/success.css">
 </head>
 <body>
 
