@@ -1,0 +1,109 @@
+/* =========================
+   UTENTI ADMIN PAGE
+========================= */
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* CONTAINER */
+.admin-users {
+    padding: 20px;
+}
+
+/* TABELLA */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #F3E3D0;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+
+/* HEADER TABELLA */
+th {
+    background: #AACDDC;
+    padding: 12px;
+    border: 1px solid rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* CELLE */
+td {
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,0.15);
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* BOTTONI */
+button {
+    padding: 8px 12px;
+    border: 1px solid rgba(0,0,0,0.2);
+    background: white;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+/* HOVER */
+button:hover {
+    background: #AACDDC;
+}
+
+/* ELIMINA UTENTE */
+button[style*="red"] {
+    color: red;
+}
+
+button[style*="red"]:hover {
+    background: #ffdddd;
+}
+
+/* FORM */
+td form {
+    display: flex;
+    justify-content: center;
+}
+
+/* RUOLO */
+td:nth-child(6) {
+    font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    /* blocco scroll orizzontale */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        width: 100%;
+    }
+
+    th, td {
+        padding: 6px;
+        font-size: 0.85rem;
+        min-width: 120px;
+    }
+
+    button {
+        padding: 6px 8px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    th, td {
+        font-size: 0.70rem;
+        min-width: 110px;
+    }
+
+    button {
+        padding: 5px 6px;
+        font-size: 0.70rem;
+    }
+}
