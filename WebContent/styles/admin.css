@@ -1,0 +1,75 @@
+/* =========================
+   ADMIN PANEL
+========================= */
+
+.admin-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    gap: 30px;
+}
+
+/* titolo */
+.admin-panel h1 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* contenitore bottoni */
+.admin-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+/* link che contiene il bottone */
+.admin-buttons a {
+    text-decoration: none;
+}
+
+/* bottoni */
+.admin-buttons button {
+    width: 100%;
+    padding: 20px;
+    background: #F3E3D0;
+    border: 1px solid rgba(0,0,0,1);
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s;
+}
+
+/* hover effetto card */
+.admin-buttons button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    background: #AACDDC;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .admin-panel {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .admin-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-buttons button {
+        padding: 15px;
+        font-size: 0.95rem;
+    }
+}
