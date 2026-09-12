@@ -1,0 +1,133 @@
+/* =========================
+   PRODUTTI ADMIN PAGE
+========================= */
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* CONTAINER GENERALE */
+.admin-products {
+    padding: 20px;
+}
+
+/* TABELLA */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #F3E3D0;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+
+/* HEADER TABELLA */
+th {
+    background: #AACDDC;
+    padding: 12px;
+    border: 1px solid rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* CELLE */
+td {
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,0.15);
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* INPUT STOCK */
+td input[type="number"] {
+    width: 80px;
+    padding: 6px;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 6px;
+    text-align: center;
+}
+
+/* SELECT ATTIVO */
+td select {
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.2);
+    background: white;
+}
+
+/* BOTTONI GENERICI */
+button {
+    padding: 8px 12px;
+    border: 1px solid rgba(0,0,0,0.2);
+    background: white;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+/* HOVER BOTTONI */
+button:hover {
+    background: #AACDDC;
+}
+
+/* BOTTONE ELIMINA */
+button[style*="red"] {
+    color: red;
+}
+
+button[style*="red"]:hover {
+    background: #ffdddd;
+}
+
+/* FORM INLINE NELLA TABELLA */
+td form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+
+    table {
+        font-size: 0.85rem;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    th, td {
+        padding: 2px;
+        min-width: 20px;
+    }
+
+    td input[type="number"] {
+        width: 30px;
+    }
+
+    button {
+        padding: 2px 4px;
+        font-size: 0.85rem;
+    }
+}
+
+/* SCHERMI MOLTO PICCOLI */
+@media (max-width: 480px) {
+
+    table {
+        font-size: 0.70rem;
+    }
+
+    th, td {
+        padding: 1px;
+        min-width: 10px;
+    }
+
+    td input[type="number"] {
+        width: 10px;
+    }
+
+    button {
+        padding: 1px 4px;
+        font-size: 0.70rem;
+    }
+}
