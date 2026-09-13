@@ -62,7 +62,7 @@ public class CheckoutServlet extends HttpServlet {
             throw new ServletException(e);
         }
 
-        // CHECK FINALE: carrello vuoto o totale = 0
+        // 🚨 CHECK FINALE: carrello vuoto o totale = 0
         if (items.isEmpty() || totale <= 0) {
             response.sendRedirect(request.getContextPath() + "/Carrello");
             return;

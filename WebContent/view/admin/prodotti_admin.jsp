@@ -90,7 +90,7 @@
         <!-- AZIONI -->
         <td>
 
-            <!-- ELIMINA PRODOTTO -->
+            <!-- 🗑 ELIMINA PRODOTTO -->
             <form action="<%=request.getContextPath()%>/DeleteProdottoAdminServlet"
                   method="post"
                   onsubmit="return confirm('Sei sicuro di voler eliminare questo prodotto?');">

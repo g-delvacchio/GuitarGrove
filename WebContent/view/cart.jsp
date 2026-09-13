@@ -7,8 +7,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Carrello - GuitarGrove</title>
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/scripts/style.css">
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/scripts/cart.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/cart.css">
 </head>
 
 <body>
@@ -48,7 +48,7 @@
             %>
 
             <tr>
-                <td><div class="product-image"><img src="" alt="Immagine prodotto"></div></td>
+                <td><div class="product-image"><img src="<%=request.getContextPath()%>/images/products/<%= p.getImmagine()%>" alt="Immagine prodotto"></div></td>
                 <td><%= p.getNome() %></td>
                 <td><%= qty %></td>
                 <td><%= p.getPrezzo() %> €</td>

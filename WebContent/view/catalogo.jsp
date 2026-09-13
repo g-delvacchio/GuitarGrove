@@ -136,7 +136,7 @@
 
         </div>
 
-        <!-- PRODOTTI  -->
+        <!-- PRODOTTI -->
         <div class="product-grid">
 
             <%

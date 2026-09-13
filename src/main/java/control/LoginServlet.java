@@ -33,8 +33,8 @@ public class LoginServlet extends HttpServlet {
             UtenteDAO dao = new UtenteDAO();
             Utente user = dao.doRetrieveByEmail(email);
 
-            if(user == null){
-                request.setAttribute("error", "Email errata");
+            if(user == null || !user.getPasswordHash().equals(HelperClass.toHash(password))){
+                request.setAttribute("error", "Email o password errati");
                 request.getRequestDispatcher("/view/login.jsp").forward(request,response);
                 return;
             }

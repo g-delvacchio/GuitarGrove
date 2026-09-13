@@ -12,7 +12,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import model.bean.Prodotto;
 import model.dao.ProdottoDAO;
 
-
+/**
+ * Servlet implementation class FiltraCatalogoServlet
+ */
 @WebServlet("/Catalogo")
 public class CatalogoFilter extends HttpServlet {
 
@@ -58,9 +60,7 @@ public class CatalogoFilter extends HttpServlet {
             request.getRequestDispatcher("/view/catalogo.jsp").forward(request, response);
 
         } catch (Exception e) {
-            //response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-        	e.printStackTrace();
-            throw new ServletException(e);
+            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
         }
     }
 

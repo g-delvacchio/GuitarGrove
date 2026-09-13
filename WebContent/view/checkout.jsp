@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <title>Checkout</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/checkout.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>styles/checkout.css">
     <script src="<%=request.getContextPath()%>/scripts/validate.js" defer></script>
 </head>
 
@@ -28,6 +28,7 @@
 
 <section class="checkout">
 
+    <!-- BOTTONE TORNA INDIETRO -->
     <div class="back-container">
         <a href="<%=request.getContextPath()%>/Carrello">
             <button type="button">← Torna indietro</button>
@@ -36,6 +37,7 @@
 
     <h1>Checkout</h1>
 
+    <!-- INDIRIZZO -->
     <div class="box">
 
         <h2>Indirizzo</h2>
@@ -56,6 +58,7 @@
 
     </div>
 
+    <!-- CARRELLO -->
     <div class="box">
 
         <h2>Riepilogo ordine</h2>
@@ -85,7 +88,7 @@
             %>
 
             <tr>
-                <td><div class="product-image"><img src="" alt="Immagine prodotto"></div></td>
+                <td><div class="product-image"><img src="<%=request.getContextPath()%>/images/products/<%= p.getImmagine()%>" alt="Immagine prodotto"></div></td>
                 <td><%= p.getNome() %></td>
                 <td><%= qty %></td>
                 <td><%= p.getPrezzo() %> €</td>
@@ -102,6 +105,7 @@
 
     </div>
 
+    <!-- PAGAMENTO -->
     <div class="box">
 
         <h2>Dati pagamento</h2>

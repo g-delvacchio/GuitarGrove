@@ -34,7 +34,7 @@ public class CheckoutControl extends HttpServlet {
         String cvv = request.getParameter("cvv");
 
         if (card == null || expiry == null || cvv == null || !card.matches(CARD_REGEX) || !cvv.matches(CVV_REGEX)) {
-            response.sendRedirect(request.getContextPath() + "/view/checkout.jsp?error=payment");
+            response.sendRedirect(request.getContextPath() + "view/checkout.jsp?error=payment");
             return;
         }
         try {

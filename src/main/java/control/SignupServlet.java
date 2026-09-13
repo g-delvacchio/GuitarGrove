@@ -27,7 +27,7 @@ public class SignupServlet extends HttpServlet {
     private void error(HttpServletRequest request, HttpServletResponse response, String messaggio)
             throws ServletException, IOException {
         request.setAttribute("error", messaggio);
-        request.getRequestDispatcher("/view/signup.jsp")
+        request.getRequestDispatcher("/jsp/signup.jsp")
                 .forward(request, response);
     }
 

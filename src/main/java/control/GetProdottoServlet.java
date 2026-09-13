@@ -45,12 +45,17 @@ public class GetProdottoServlet extends HttpServlet {
                 return;
             }
 
+            // Se il prodotto non è attivo torna al catalogo
+            if (!prodotto.isAttivo()) {
+                response.sendRedirect(request.getContextPath() + "/view/catalogo.jsp");
+                return;
+            }
+
             request.setAttribute("prodotto", prodotto);
             request.getRequestDispatcher("/view/prodotto.jsp").forward(request, response);
 
         } catch (Exception e) {
             response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-            throw new ServletException(e);
         }
     }
 }
