@@ -68,11 +68,11 @@
             <input type="text"
                    id="searchInput"
                    name="q"
-                   placeholder="Cerca strumenti, accessori e marche...">
+                   placeholder="Cerca...">
 
             <span>&nbsp;</span>
 
-            <button type="submit">Cerca</button>
+            <button type="submit">Scopri</button>
 
             <!-- AJAX suggestions -->
             <div id="suggestions" class="suggestions"></div>
