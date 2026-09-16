@@ -51,7 +51,7 @@ public class SignupServlet extends HttpServlet {
         String civico = request.getParameter("civico");
 
         try {
-            /*CONTROLLO CAMPI VUOTI*/
+        	
             if(username == null ||
                     email == null ||
                     password == null ||
@@ -69,7 +69,6 @@ public class SignupServlet extends HttpServlet {
                 return;
             }
 
-            /*RIMOZIONE SPAZI*/
             username = username.trim();
             email = email.trim();
             nome = nome.trim();
@@ -82,7 +81,6 @@ public class SignupServlet extends HttpServlet {
             via = via.trim();
             civico = civico.trim();
 
-            /*VALIDAZIONE DATI*/
             if(!username.matches(USERNAME_REGEX)) {
                 error(request,response, "Username non valido");
                 return;
@@ -132,7 +130,6 @@ public class SignupServlet extends HttpServlet {
                 return;
             }
 
-            /*CONTROLLO DATABASE*/
             UtenteDAO utenteDAO = new UtenteDAO();
             if(utenteDAO.existsUsername(username)) {
                 error(request,response, "Username già esistente");
@@ -143,7 +140,6 @@ public class SignupServlet extends HttpServlet {
                 return;
             }
 
-            /*CREAZIONE UTENTE*/
             Utente utente = new Utente();
             utente.setUsername(username);
             utente.setEmail(email);
@@ -156,7 +152,6 @@ public class SignupServlet extends HttpServlet {
             utente.setAdmin(false);
             utenteDAO.doSave(utente);
 
-            /*CREAZIONE INDIRIZZO*/
             Indirizzo indirizzo = new Indirizzo();
             indirizzo.setUserId(
                     utente.getUserId()
@@ -170,7 +165,6 @@ public class SignupServlet extends HttpServlet {
                     new IndirizzoDAO();
             indirizzoDAO.doSave(indirizzo);
 
-            /*REDIRECT LOGIN*/
             response.sendRedirect(request.getContextPath() + "/view/login.jsp");
 
         } catch(SQLException e) {

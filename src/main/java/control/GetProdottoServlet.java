@@ -45,7 +45,6 @@ public class GetProdottoServlet extends HttpServlet {
                 return;
             }
 
-            // Se il prodotto non è attivo torna al catalogo
             if (!prodotto.isAttivo()) {
                 response.sendRedirect(request.getContextPath() + "/view/catalogo.jsp");
                 return;

@@ -51,7 +51,6 @@ public class UpdateProdottoAdminServlet extends HttpServlet {
 
                     int stock = Integer.parseInt(request.getParameter("stock"));
 
-                    // mai negativo
                     if (stock < 0) stock = 0;
 
                     p.setStock(stock);
@@ -62,7 +61,6 @@ public class UpdateProdottoAdminServlet extends HttpServlet {
 
                     int attivo = Integer.parseInt(request.getParameter("attivo"));
 
-                    // solo 0/1
                     p.setAttivo(attivo == 1);
                     dao.doSaveOrUpdate(p);
                     break;

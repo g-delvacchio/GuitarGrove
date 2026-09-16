@@ -38,7 +38,6 @@ public class DeleteUtenteAdminServlet extends HttpServlet {
             IndirizzoDAO indirizzo = new IndirizzoDAO();
             UtenteDAO dao = new UtenteDAO();
 
-            // 🔒 evita che un admin si cancelli da solo (opzionale ma consigliato)
             if (admin.getUserId() == id) {
                 response.sendRedirect(request.getContextPath() + "/AdminUtentiServlet?error=selfdelete");
                 return;

@@ -27,7 +27,6 @@ public class AdminUtentiServlet extends HttpServlet {
 
         Utente user = (Utente) session.getAttribute("user");
 
-        // controllo admin
         if (user == null || !user.isAdmin()) {
             response.sendRedirect(request.getContextPath() + "/index.jsp");
             return;

@@ -51,7 +51,6 @@ public class CheckoutControl extends HttpServlet {
 
             double totale = 0;
 
-            // controllo prodotti e stock
             for (ProdottoCarrello pc : carrello) {
                 Prodotto prodotto = prodottoDAO.doRetrieveByKey(pc.getProductId());
 
@@ -63,7 +62,6 @@ public class CheckoutControl extends HttpServlet {
                 totale += prodotto.getPrezzo() * pc.getQuantita();
             }
 
-            // CREAZIONE ORDINE
             Acquisto acquisto = new Acquisto();
             acquisto.setUserId(user.getUserId());
             acquisto.setTotale(totale);
@@ -72,7 +70,6 @@ public class CheckoutControl extends HttpServlet {
             acquisto.setPagamento("CARTA");
             int orderId = acquistoDAO.doSave(acquisto);
 
-            // SALVATAGGIO PRODOTTI ACQUISTATI + UPDATE STOCK
             for (ProdottoCarrello pc : carrello) {
                 Prodotto prodotto = prodottoDAO.doRetrieveByKey(pc.getProductId());
 
@@ -89,7 +86,6 @@ public class CheckoutControl extends HttpServlet {
                 prodottoDAO.doSaveOrUpdate(prodotto);
             }
 
-            // SVUOTA CARRELLO
             for (ProdottoCarrello pc : carrello) {
                 cartDao.doDelete(user.getUserId(), pc.getProductId());
             }

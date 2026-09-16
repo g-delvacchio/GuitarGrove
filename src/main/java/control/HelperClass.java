@@ -6,7 +6,6 @@ import java.security.NoSuchAlgorithmException;
 
 public class HelperClass {
 
-    // Cifra una stringa con SHA-256
     public static String toHash(String password) {
 
         try {
@@ -27,7 +26,6 @@ public class HelperClass {
         }
     }
 
-    // Rimuove spazi iniziali/finali
     public static String filter(String s) {
 
         if (s == null)

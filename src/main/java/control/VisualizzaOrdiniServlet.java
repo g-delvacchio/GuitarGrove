@@ -32,11 +32,9 @@ public class VisualizzaOrdiniServlet extends HttpServlet {
             ProdottoAcquistatoDAO paDAO = new ProdottoAcquistatoDAO();
             ProdottoDAO prodottoDAO = new ProdottoDAO();
 
-            // ORDINI UTENTE
             List<Acquisto> ordini =
                     acquistoDAO.doRetrieveByCond("user_id=" + user.getUserId());
 
-            // MAP: orderId -> lista prodotti acquistati (con dettagli prodotto)
             Map<Integer, List<Map<String, Object>>> prodottiPerOrdine = new HashMap<>();
 
             for (Acquisto ordine : ordini) {

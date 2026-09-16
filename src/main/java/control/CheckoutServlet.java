@@ -18,7 +18,6 @@ public class CheckoutServlet extends HttpServlet {
         HttpSession session = request.getSession();
         Utente user = (Utente) session.getAttribute("user");
 
-        // login check
         if (user == null) {
             response.sendRedirect(request.getContextPath() + "/view/login.jsp");
             return;
@@ -41,7 +40,6 @@ public class CheckoutServlet extends HttpServlet {
 
                 Prodotto p = pdao.doRetrieveByKey(pc.getProductId());
 
-                // se prodotto non valido → rimuovi dal carrello
                 if (p == null || !p.isAttivo() || p.getStock() <= 0) {
                     cdao.doDelete(user.getUserId(), pc.getProductId());
                     continue;
@@ -62,7 +60,6 @@ public class CheckoutServlet extends HttpServlet {
             throw new ServletException(e);
         }
 
-        // 🚨 CHECK FINALE: carrello vuoto o totale = 0
         if (items.isEmpty() || totale <= 0) {
             response.sendRedirect(request.getContextPath() + "/Carrello");
             return;

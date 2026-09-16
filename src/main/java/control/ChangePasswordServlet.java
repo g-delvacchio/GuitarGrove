@@ -19,7 +19,6 @@ public class ChangePasswordServlet extends HttpServlet {
 
         HttpSession session = request.getSession(false);
 
-        // controllo login
         if(session == null || session.getAttribute("user") == null){
 
             response.sendRedirect(request.getContextPath()+"/view/login.jsp");
@@ -32,7 +31,6 @@ public class ChangePasswordServlet extends HttpServlet {
         String newPass = request.getParameter("newPassword");
         String confirm = request.getParameter("confirmPassword");
 
-        // campi vuoti
         if(oldPass == null || newPass == null || confirm == null ||
                 oldPass.trim().isEmpty() ||
                 newPass.trim().isEmpty() ||
@@ -42,7 +40,6 @@ public class ChangePasswordServlet extends HttpServlet {
             return;
         }
 
-        // controllo vecchia password
         String oldHash = HelperClass.toHash(oldPass);
 
         if(!oldHash.equals(user.getPasswordHash())){
@@ -50,13 +47,11 @@ public class ChangePasswordServlet extends HttpServlet {
             return;
         }
 
-        // controllo nuova password uguale conferma
         if(!newPass.equals(confirm)){
             response.sendRedirect(request.getContextPath()+"/Account?error=match");
             return;
         }
 
-        // controllo formato nuova password
         if(!newPass.matches(PASSWORD_REGEX)){
             response.sendRedirect(request.getContextPath()+"/Account?error=password"
             );
@@ -69,7 +64,6 @@ public class ChangePasswordServlet extends HttpServlet {
             UtenteDAO dao = new UtenteDAO();
             dao.doSaveOrUpdate(user);
 
-            // aggiorno sessione
             session.setAttribute("user", user);
 
             response.sendRedirect(

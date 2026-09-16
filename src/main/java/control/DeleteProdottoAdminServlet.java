@@ -19,7 +19,6 @@ public class DeleteProdottoAdminServlet extends HttpServlet {
 
         HttpSession session = request.getSession(false);
 
-        // controllo sessione
         if (session == null) {
             response.sendRedirect(request.getContextPath() + "/index.jsp");
             return;
@@ -27,7 +26,6 @@ public class DeleteProdottoAdminServlet extends HttpServlet {
 
         Utente user = (Utente) session.getAttribute("user");
 
-        // controllo login + admin
         if (user == null || !user.isAdmin()) {
             response.sendRedirect(request.getContextPath() + "/index.jsp");
             return;
@@ -56,7 +54,6 @@ public class DeleteProdottoAdminServlet extends HttpServlet {
             return;
         }
 
-        // ritorna sempre alla pagina admin prodotti
         response.sendRedirect(request.getContextPath() + "/AdminProdottiServlet");
     }
 }

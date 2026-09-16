@@ -29,9 +29,6 @@ public class CartServlet extends HttpServlet {
 
             ProdottoDAO pdao = new ProdottoDAO();
 
-            // =========================
-            // LOGGATO (DB)
-            // =========================
             if (user != null) {
 
                 ProdottoCarrelloDAO cdao = new ProdottoCarrelloDAO();
@@ -42,7 +39,6 @@ public class CartServlet extends HttpServlet {
 
                     Prodotto p = pdao.doRetrieveByKey(pc.getProductId());
 
-                    // elimina prodotti non validi
                     if (p == null || !p.isAttivo() || p.getStock() <= 0) {
                         cdao.doDelete(user.getUserId(), pc.getProductId());
                         continue;
@@ -50,7 +46,6 @@ public class CartServlet extends HttpServlet {
 
                     int qty = pc.getQuantita();
 
-                    // quantità allo stock
                     if (qty > p.getStock()) {
                         qty = p.getStock();
 
@@ -71,26 +66,20 @@ public class CartServlet extends HttpServlet {
                 }
             }
 
-            // =========================
-            // GUEST (SESSIONE)
-            // =========================
             else {
 
-                //sessione utente: id prodotto, quantità
                 Map<Integer, Integer> cart = (Map<Integer, Integer>) session.getAttribute(SESSION_CART);
 
                 if (cart != null) {
 
-                    //scorrere tutto il carrello elemento per elemento
                     Iterator<Map.Entry<Integer, Integer>> it = cart.entrySet().iterator();
 
                     while (it.hasNext()) {
-                        //prendere un elemento del carrello alla volta
+                    	
                         Map.Entry<Integer, Integer> entry = it.next();
 
                         Prodotto p = pdao.doRetrieveByKey(entry.getKey());
 
-                        // elimina prodotti non validi
                         if (p == null || !p.isAttivo() || p.getStock() <= 0) {
                             it.remove();
                             continue;
@@ -98,7 +87,6 @@ public class CartServlet extends HttpServlet {
 
                         int qty = entry.getValue();
 
-                        // quantità allo stock
                         if (qty > p.getStock()) {
                             qty = p.getStock();
                             entry.setValue(qty);
@@ -153,9 +141,6 @@ public class CartServlet extends HttpServlet {
             ProdottoDAO pdao = new ProdottoDAO();
             Prodotto prodotto = pdao.doRetrieveByKey(productId);
 
-            // =========================
-            // LOGGATO
-            // =========================
             if (user != null) {
 
                 ProdottoCarrelloDAO cdao = new ProdottoCarrelloDAO();
@@ -198,9 +183,6 @@ public class CartServlet extends HttpServlet {
                 }
             }
 
-            // =========================
-            // GUEST
-            // =========================
             else {
 
                 Map<Integer, Integer> cart = (Map<Integer, Integer>) session.getAttribute(SESSION_CART);
@@ -210,8 +192,7 @@ public class CartServlet extends HttpServlet {
                 }
 
                 if ("add".equals(action)) {
-                    // si prende dal carrello la quantità attuale del prodotto con quell'id
-                    // e se il prodotto non è presente nel carrello si mette 0
+                	
                     int currentQty = cart.getOrDefault(productId, 0);
 
                     if (prodotto != null) {
@@ -222,7 +203,7 @@ public class CartServlet extends HttpServlet {
                 }
 
                 if ("delete".equals(action)) {
-                    //decrementa la quantità di 1 se si clicca sul "-"
+                	
                     cart.put(productId, cart.getOrDefault(productId, 0) - 1);
 
                     if (cart.get(productId) <= 0) {

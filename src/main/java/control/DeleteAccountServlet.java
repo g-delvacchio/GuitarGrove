@@ -34,15 +34,12 @@ public class DeleteAccountServlet extends HttpServlet {
 
             int userId = user.getUserId();
 
-            // 1. elimina indirizzo
             IndirizzoDAO indirizzoDAO = new IndirizzoDAO();
             indirizzoDAO.doDelete(userId);
 
-            // 2. elimina utente
             UtenteDAO utenteDAO = new UtenteDAO();
             utenteDAO.doDelete(userId);
 
-            // 3. chiudi sessione
             session.invalidate();
 
         } catch (Exception e) {

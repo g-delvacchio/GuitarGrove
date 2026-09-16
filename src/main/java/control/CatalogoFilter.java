@@ -12,9 +12,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import model.bean.Prodotto;
 import model.dao.ProdottoDAO;
 
-/**
- * Servlet implementation class FiltraCatalogoServlet
- */
 @WebServlet("/Catalogo")
 public class CatalogoFilter extends HttpServlet {
 

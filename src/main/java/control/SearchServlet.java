@@ -56,7 +56,6 @@ public class SearchServlet extends HttpServlet {
         }
     }
 
-    // evita problemi con " e caratteri speciali
     private String escape(String s) {
         if (s == null) return "";
         return s.replace("\"", "\\\"");
