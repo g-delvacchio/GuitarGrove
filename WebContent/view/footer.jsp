@@ -3,7 +3,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GuitarGrove</title>
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/footer.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/footer.css">
 </head>
 
 <footer>

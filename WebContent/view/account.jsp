@@ -8,6 +8,7 @@
 <head>
     <title>GuitarGrove - Account</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/account.css">
     <script src="<%=request.getContextPath()%>/scripts/validate.js" defer></script>
 </head>
 
@@ -35,6 +36,7 @@
 
     <h1>Benvenuto, <%= user.getNome() %> !</h1>
 
+    <!-- BOTTONE ORDINI -->
     <div style="margin: 15px 0;">
         <form action="<%=request.getContextPath()%>/VisualizzaOrdiniServlet" method="get">
             <button type="submit">
@@ -115,6 +117,7 @@
 
     </div>
 
+    <!-- AZIONI -->
     <div class="account-actions">
 
         <form action="<%=request.getContextPath()%>/LogoutServlet" method="post">

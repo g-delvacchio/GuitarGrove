@@ -16,7 +16,9 @@
 <html lang="it">
 
 <head>
-    <title>GuitarGrove - Utenti Admin</title>
+    <title>Audify - Utenti Admin</title>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/utenti_admin.css">
 </head>
 
 <body>
@@ -62,7 +64,8 @@
 
         <td>
 
-            <form action="<%=request.getContextPath()%>/DeleteUtenteAdminServlet" method="post">
+            <form action="<%=request.getContextPath()%>/DeleteUtenteAdminServlet" method="post"
+                  onsubmit="return confirm('Sei sicuro di voler eliminare questo utente?');">
                 <input type="hidden" name="id" value="<%= us.getUserId() %>">
                 <button type="submit" style="color:red;">
                     Elimina

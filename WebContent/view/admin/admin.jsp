@@ -15,6 +15,8 @@
 
 <head>
     <title>Admin Panel - GuitarGrove</title>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/admin.css">
 </head>
 
 <body>

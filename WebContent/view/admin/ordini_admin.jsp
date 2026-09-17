@@ -17,7 +17,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>GuitarGrove - Ordini Admin</title>
+    <title>Audify - Ordini Admin</title>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/ordini_admin.css">
 </head>
 
 <body>
