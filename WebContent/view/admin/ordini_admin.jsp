@@ -17,7 +17,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Audify - Ordini Admin</title>
+    <title>GuitarGrove - Ordini Admin</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/ordini_admin.css">
 </head>
@@ -28,7 +28,6 @@
 
 <h1>Ordini effettuati</h1>
 
-<!-- BOTTONE TORNA INDIETRO -->
 <div class="back-container">
     <a href="<%=request.getContextPath()%>/view/admin/admin.jsp">
         <button type="button">← Torna indietro</button>

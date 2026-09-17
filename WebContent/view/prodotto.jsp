@@ -10,7 +10,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Audify - <%= prodotto.getNome() %></title>
+    <title>GuitarGrove - <%= prodotto.getNome() %></title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/prodotto.css">
 </head>
@@ -19,7 +19,6 @@
 
 <jsp:include page="header.jsp" />
 
-<!-- BOTTONE TORNA INDIETRO -->
 <div class="back-container">
     <a href="<%=request.getContextPath()%>/view/catalogo.jsp">
         <button type="button">← Torna indietro</button>

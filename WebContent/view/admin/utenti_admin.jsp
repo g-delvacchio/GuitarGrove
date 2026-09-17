@@ -16,7 +16,7 @@
 <html lang="it">
 
 <head>
-    <title>Audify - Utenti Admin</title>
+    <title>GuitarGrove - Utenti Admin</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/utenti_admin.css">
 </head>
@@ -27,7 +27,6 @@
 
 <h1>Gestione Utenti</h1>
 
-<!-- TORNA INDIETRO -->
 <div class="back-container">
     <a href="<%=request.getContextPath()%>/view/admin/admin.jsp">
         <button type="button">← Torna indietro</button>
