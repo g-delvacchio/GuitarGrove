@@ -153,7 +153,7 @@
                 <p><%= p.getMarca() %></p>
                 <p><%= p.getCategoria() %></p>
 
-                <p class="price">€ <%= p.getPrezzo() %></p>
+                <p class="price">€ <%= String.format("%.2f", p.getPrezzo()) %></p>
 
                     <a href="<%=request.getContextPath()%>/ProdottoGuitarGrove?id=<%=p.getProductId()%>">
                     Vedi prodotto

@@ -24,7 +24,7 @@
                 <h3>Les Paul Standard 50s</h3>
                 <p>Gibson</p>
                 <p>Chitarra elettrica</p>
-                <p class="price">€ 2699.00</p>
+                <p class="price">€ 2699</p>
                 <a href="<%=request.getContextPath()%>/ProdottoGuitarGrove?id=8">
                     Vedi prodotto </a>
             </div>

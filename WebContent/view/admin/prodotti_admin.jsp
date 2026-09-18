@@ -57,7 +57,7 @@
         <td><%= p.getNome() %></td>
         <td><%= p.getMarca() %></td>
         <td><%= p.getModello() %></td>
-        <td><%= p.getPrezzo() %></td>
+        <td><%= String.format("%.2f", p.getPrezzo()) %></td>
 
         <!-- STOCK -->
         <td>

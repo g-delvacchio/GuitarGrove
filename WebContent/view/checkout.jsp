@@ -91,8 +91,8 @@
                 <td><div class="product-image"><img src="<%=request.getContextPath()%>/images/products/<%= p.getImmagine()%>" alt="Immagine prodotto"></div></td>
                 <td><%= p.getNome() %></td>
                 <td><%= qty %></td>
-                <td><%= p.getPrezzo() %> €</td>
-                <td><%= subtotal %> €</td>
+                <td><%= String.format("%.2f", p.getPrezzo()) %> €</td>
+                <td><%= String.format("%.2f", subtotal) %> €</td>
             </tr>
 
             <% } %>
@@ -101,7 +101,7 @@
 
         <% } %>
 
-        <h3>Totale: € <%= totale %> + €10 di spedizione</h3>
+        <h3>Totale: € <%= String.format("%.2f", totale) %> + €10 di spedizione</h3>
 
     </div>
 

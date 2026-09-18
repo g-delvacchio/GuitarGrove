@@ -51,8 +51,8 @@
                 <td><div class="product-image"><img src="<%=request.getContextPath()%>/images/products/<%= p.getImmagine()%>" alt="Immagine prodotto"></div></td>
                 <td><%= p.getNome() %></td>
                 <td><%= qty %></td>
-                <td><%= p.getPrezzo() %> €</td>
-                <td><%= subtotal %> €</td>
+                <td><%= String.format("%.2f", p.getPrezzo()) %> €</td>
+                <td><%= String.format("%.2f", subtotal) %> €</td>
 
                 <td>
                     <form action="<%=request.getContextPath()%>/Carrello" method="post">
@@ -73,7 +73,7 @@
 
         </table>
 
-        <h2>Totale: <%= totale %> €</h2>
+        <h2>Totale: <%= String.format("%.2f", totale) %> €</h2>
 
         <% } %>
 

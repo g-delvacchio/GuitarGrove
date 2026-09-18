@@ -48,7 +48,7 @@
             </p>
 
             <h2 class="price">
-                € <%= prodotto.getPrezzo() %>
+                € <%= String.format("%.2f", prodotto.getPrezzo()) %>
             </h2>
 
             <% if (prodotto.getStock() > 0) { %>
