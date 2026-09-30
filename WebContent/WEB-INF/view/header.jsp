@@ -37,7 +37,7 @@
         <div class="user-actions">
 
             <!-- ACCOUNT / LOGIN -->
-            <a href="<%=request.getContextPath()%>/<%= (u != null ? "Account" : "view/login.jsp") %>"
+            <a href="<%=request.getContextPath()%>/<%= (u != null ? "Account" : "Login") %>"
                class="icon-user">
 
                 <img src="<%=request.getContextPath()%>/images/profilo.png" alt="Account">
@@ -59,7 +59,7 @@
 
         <button class="menu-button" id="openMenu">☰</button>
 
-        <form action="<%=request.getContextPath()%>/view/catalogo.jsp"
+        <form action="<%=request.getContextPath()%>/Catalogo"
               method="GET"
               class="search-form"
               id="searchForm">

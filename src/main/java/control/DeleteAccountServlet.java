@@ -19,14 +19,14 @@ public class DeleteAccountServlet extends HttpServlet {
         HttpSession session = request.getSession(false);
 
         if (session == null) {
-            response.sendRedirect("view/login.jsp");
+            response.sendRedirect("/Login");
             return;
         }
 
         Utente user = (Utente) session.getAttribute("user");
 
         if (user == null) {
-            response.sendRedirect("view/login.jsp");
+            response.sendRedirect("/Login");
             return;
         }
 

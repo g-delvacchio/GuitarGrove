@@ -80,7 +80,7 @@ public class AdminOrdiniServlet extends HttpServlet {
 
             request.setAttribute("ordini", result);
 
-            request.getRequestDispatcher("/view/admin/ordini_admin.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/view/admin/ordini_admin.jsp").forward(request, response);
 
         } catch (SQLException e) {
             throw new ServletException(e);

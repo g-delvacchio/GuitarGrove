@@ -2,16 +2,17 @@ package control;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.*;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
-import model.bean.Indirizzo;
 import model.bean.Utente;
-import model.dao.IndirizzoDAO;
 
 import java.io.IOException;
 
-@WebServlet("/Account")
-public class AccountServlet extends HttpServlet {
+@WebServlet("/Admin")
+public class AdminServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -26,17 +27,12 @@ public class AccountServlet extends HttpServlet {
 
         Utente user = (Utente) session.getAttribute("user");
 
-        try {
-            IndirizzoDAO dao = new IndirizzoDAO();
-            Indirizzo indirizzo = dao.doRetrieveByKey(user.getUserId());
-
-            session.setAttribute("indirizzo", indirizzo);
-
-        } catch (Exception e) {
-            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+        if (!user.isAdmin()) {
+            response.sendError(HttpServletResponse.SC_FORBIDDEN);
+            return;
         }
 
-        request.getRequestDispatcher("/WEB-INF/view/account.jsp")
+        request.getRequestDispatcher("/WEB-INF/view/admin/admin.jsp")
                 .forward(request, response);
     }
 }

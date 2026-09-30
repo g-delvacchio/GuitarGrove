@@ -20,7 +20,7 @@
     Utente user = (Utente) session.getAttribute("user");
 
     if (user == null) {
-        response.sendRedirect(request.getContextPath() + "/view/login.jsp");
+        response.sendRedirect(request.getContextPath() + "/Login");
         return;
     }
 
@@ -128,7 +128,7 @@
         </form>
 
         <% if (isAdmin) { %>
-        <form action="<%=request.getContextPath()%>/view/admin/admin.jsp">
+        <form action="<%=request.getContextPath()%>/Admin" method="get">
             <button type="submit" style="background:#81A6C6;">
                 Gestione ADMIN
             </button>

@@ -54,7 +54,7 @@ public class CatalogoFilter extends HttpServlet {
 
             request.setAttribute("prodotti", prodotti);
 
-            request.getRequestDispatcher("/view/catalogo.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/view/catalogo.jsp").forward(request, response);
 
         } catch (Exception e) {
             response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);

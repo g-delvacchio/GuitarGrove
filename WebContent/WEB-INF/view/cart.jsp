@@ -85,7 +85,7 @@
 
         <p style="color:red">Devi effettuare il login per procedere al checkout</p>
 
-        <a href="<%=request.getContextPath()%>/view/login.jsp">
+        <a href="<%=request.getContextPath()%>/WEB-INF/view/login.jsp">
             Login
         </a>
 
@@ -95,7 +95,7 @@
 
         <p>Il tuo carrello è vuoto.</p>
 
-        <a href="<%=request.getContextPath()%>/view/catalogo.jsp">
+        <a href="<%=request.getContextPath()%>/WEB-INF/view/catalogo.jsp">
             Vai al catalogo
         </a>
 

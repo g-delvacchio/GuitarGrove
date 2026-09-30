@@ -52,7 +52,7 @@
                     <button type="submit">Login</button>
 
                 </form>
-                <p>Non hai un account? <a href="<%=request.getContextPath()%>/view/signup.jsp">Registrati qui</a>.</p>
+                <p>Non hai un account? <a href="<%=request.getContextPath()%>/Signup">Registrati qui</a>.</p>
             </div>
         </section>
     </main>

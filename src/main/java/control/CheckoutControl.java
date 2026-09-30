@@ -24,7 +24,7 @@ public class CheckoutControl extends HttpServlet {
         HttpSession session = request.getSession(false);
 
         if (session == null || session.getAttribute("user") == null) {
-            response.sendRedirect(request.getContextPath() + "/view/login.jsp");
+            response.sendRedirect(request.getContextPath() + "/Login");
             return;
         }
 
@@ -34,7 +34,7 @@ public class CheckoutControl extends HttpServlet {
         String cvv = request.getParameter("cvv");
 
         if (card == null || expiry == null || cvv == null || !card.matches(CARD_REGEX) || !cvv.matches(CVV_REGEX)) {
-            response.sendRedirect(request.getContextPath() + "view/checkout.jsp?error=payment");
+            response.sendRedirect(request.getContextPath() + "/Checkout?error=payment");
             return;
         }
         try {
@@ -90,11 +90,11 @@ public class CheckoutControl extends HttpServlet {
                 cartDao.doDelete(user.getUserId(), pc.getProductId());
             }
 
-            response.sendRedirect(request.getContextPath() + "/view/success.jsp");
+            response.sendRedirect(request.getContextPath() + "/WEB-INF/view/success.jsp");
 
         } catch(SQLException e) {
             e.printStackTrace();
-            response.sendRedirect(request.getContextPath() + "/view/checkout.jsp?error=db"
+            response.sendRedirect(request.getContextPath() + "/Checkout?error=db"
             );
 
         }

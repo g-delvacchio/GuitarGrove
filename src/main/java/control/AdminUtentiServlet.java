@@ -39,7 +39,7 @@ public class AdminUtentiServlet extends HttpServlet {
 
             request.setAttribute("utenti", utenti);
 
-            request.getRequestDispatcher("/view/admin/utenti_admin.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/view/admin/utenti_admin.jsp").forward(request, response);
 
         } catch (SQLException e) {
             throw new ServletException(e);

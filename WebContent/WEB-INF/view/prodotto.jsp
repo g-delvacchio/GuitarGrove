@@ -20,7 +20,7 @@
 <jsp:include page="header.jsp" />
 
 <div class="back-container">
-    <a href="<%=request.getContextPath()%>/view/catalogo.jsp">
+    <a href="<%=request.getContextPath()%>/WEB-INF/view/catalogo.jsp">
         <button type="button">← Torna indietro</button>
     </a>
 </div>

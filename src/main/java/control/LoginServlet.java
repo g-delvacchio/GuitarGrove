@@ -16,7 +16,15 @@ import model.dao.ProdottoCarrelloDAO;
 @WebServlet("/Login")
 public class LoginServlet extends HttpServlet {
 
-    @Override
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	        throws ServletException, IOException {
+
+	    request.getRequestDispatcher("/WEB-INF/view/login.jsp")
+	           .forward(request, response);
+	}
+	
+	@Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -25,7 +33,7 @@ public class LoginServlet extends HttpServlet {
 
         if(email == null || password == null || email.trim().isEmpty() || password.trim().isEmpty()){
             request.setAttribute("error","Compila tutti i campi");
-            request.getRequestDispatcher("/view/login.jsp").forward(request,response);
+            request.getRequestDispatcher("/WEB-INF/view/login.jsp").forward(request,response);
             return;
         }
 
@@ -35,7 +43,7 @@ public class LoginServlet extends HttpServlet {
 
             if(user == null || !user.getPasswordHash().equals(HelperClass.toHash(password))){
                 request.setAttribute("error", "Email o password errati");
-                request.getRequestDispatcher("/view/login.jsp").forward(request,response);
+                request.getRequestDispatcher("/WEB-INF/view/login.jsp").forward(request,response);
                 return;
             }
 
@@ -80,7 +88,7 @@ public class LoginServlet extends HttpServlet {
         }catch(SQLException e){
             e.printStackTrace();
             request.setAttribute("error","Errore database");
-            request.getRequestDispatcher("/view/login.jsp").forward(request,response);
+            request.getRequestDispatcher("/WEB-INF/view/login.jsp").forward(request,response);
         }
     }
 }

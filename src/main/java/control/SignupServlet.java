@@ -27,7 +27,7 @@ public class SignupServlet extends HttpServlet {
     private void error(HttpServletRequest request, HttpServletResponse response, String messaggio)
             throws ServletException, IOException {
         request.setAttribute("error", messaggio);
-        request.getRequestDispatcher("/jsp/signup.jsp")
+        request.getRequestDispatcher("/WEB-INF/view/signup.jsp")
                 .forward(request, response);
     }
 
@@ -165,7 +165,7 @@ public class SignupServlet extends HttpServlet {
                     new IndirizzoDAO();
             indirizzoDAO.doSave(indirizzo);
 
-            response.sendRedirect(request.getContextPath() + "/view/login.jsp");
+            response.sendRedirect(request.getContextPath() + "/Login");
 
         } catch(SQLException e) {
             e.printStackTrace();

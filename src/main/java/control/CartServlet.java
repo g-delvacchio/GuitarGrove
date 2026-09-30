@@ -115,7 +115,7 @@ public class CartServlet extends HttpServlet {
         request.setAttribute("items", itemsView);
         request.setAttribute("totale", totale);
 
-        request.getRequestDispatcher("/view/cart.jsp")
+        request.getRequestDispatcher("/WEB-INF/view/cart.jsp")
                 .forward(request, response);
     }
 

@@ -13,9 +13,9 @@
         <p>© 2026 GuitarGrove</p>
 
         <div class="footer-links">
-            <a href="<%=request.getContextPath()%>/view/chi_siamo.jsp">Chi siamo</a>
+            <a href="<%=request.getContextPath()%>/Pagine?pagina=chi-siamo">Chi siamo</a>
             <span>&nbsp;&nbsp;&nbsp;</span>
-            <a href="<%=request.getContextPath()%>/view/assistenza.jsp">Assistenza</a>
+            <a href="<%=request.getContextPath()%>/Pagine?pagina=assistenza">Assistenza</a>
         </div>
     </div>
 

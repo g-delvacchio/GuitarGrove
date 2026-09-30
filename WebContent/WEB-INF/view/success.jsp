@@ -17,7 +17,7 @@
 
         <p>Grazie per il tuo ordine.</p>
 
-        <a href="<%=request.getContextPath()%>/view/catalogo.jsp">
+        <a href="<%=request.getContextPath()%>/Catalogo">
             Continua lo shopping
         </a>
 

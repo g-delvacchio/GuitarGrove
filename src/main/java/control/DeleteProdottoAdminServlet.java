@@ -34,7 +34,7 @@ public class DeleteProdottoAdminServlet extends HttpServlet {
         String idParam = request.getParameter("id");
 
         if (idParam == null) {
-            response.sendRedirect(request.getContextPath() + "/view/admin/prodotti_admin.jsp?error=missing");
+            response.sendRedirect(request.getContextPath() + "/AdminProdottiServlet?error=missing");
             return;
         }
 
@@ -45,12 +45,12 @@ public class DeleteProdottoAdminServlet extends HttpServlet {
             dao.doDelete(productId);
 
         } catch (NumberFormatException e) {
-            response.sendRedirect(request.getContextPath() + "/view/admin/prodotti_admin.jsp?error=format");
+            response.sendRedirect(request.getContextPath() + "/AdminProdottiServlet?error=format");
             return;
 
         } catch (SQLException e) {
             e.printStackTrace();
-            response.sendRedirect(request.getContextPath() + "/view/admin/prodotti_admin.jsp?error=db");
+            response.sendRedirect(request.getContextPath() + "/AdminProdottiServlet?error=db");
             return;
         }
 

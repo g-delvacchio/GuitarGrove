@@ -19,7 +19,7 @@ public class CheckoutServlet extends HttpServlet {
         Utente user = (Utente) session.getAttribute("user");
 
         if (user == null) {
-            response.sendRedirect(request.getContextPath() + "/view/login.jsp");
+            response.sendRedirect(request.getContextPath() + "/Login");
             return;
         }
 
@@ -69,7 +69,7 @@ public class CheckoutServlet extends HttpServlet {
         request.setAttribute("totale", totale);
         request.setAttribute("indirizzo", indirizzo);
 
-        request.getRequestDispatcher("/view/checkout.jsp")
+        request.getRequestDispatcher("/WEB-INF/view/checkout.jsp")
                 .forward(request, response);
     }
 }

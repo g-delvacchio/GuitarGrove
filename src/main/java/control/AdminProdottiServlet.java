@@ -40,7 +40,7 @@ public class AdminProdottiServlet extends HttpServlet {
 
             request.setAttribute("prodotti", prodotti);
 
-            request.getRequestDispatcher("/view/admin/prodotti_admin.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/view/admin/prodotti_admin.jsp").forward(request, response);
 
         } catch (SQLException e) {
             throw new ServletException(e);

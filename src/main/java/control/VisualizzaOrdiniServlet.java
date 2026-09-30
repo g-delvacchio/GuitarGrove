@@ -21,7 +21,7 @@ public class VisualizzaOrdiniServlet extends HttpServlet {
         HttpSession session = request.getSession(false);
 
         if (session == null || session.getAttribute("user") == null) {
-            response.sendRedirect(request.getContextPath() + "/view/login.jsp");
+            response.sendRedirect(request.getContextPath() + "/Login");
             return;
         }
 
@@ -62,7 +62,7 @@ public class VisualizzaOrdiniServlet extends HttpServlet {
             request.setAttribute("ordini", ordini);
             request.setAttribute("prodottiPerOrdine", prodottiPerOrdine);
 
-            request.getRequestDispatcher("/view/visualizza_ordini.jsp")
+            request.getRequestDispatcher("/WEB-INF/view/visualizza_ordini.jsp")
                     .forward(request, response);
 
         } catch (SQLException e) {

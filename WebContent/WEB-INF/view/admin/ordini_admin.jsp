@@ -29,7 +29,7 @@
 <h1>Ordini effettuati</h1>
 
 <div class="back-container">
-    <a href="<%=request.getContextPath()%>/view/admin/admin.jsp">
+    <a href="<%=request.getContextPath()%>/WEB-INF/view/admin/admin.jsp">
         <button type="button">← Torna indietro</button>
     </a>
 </div>
