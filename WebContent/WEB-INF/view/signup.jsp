@@ -114,7 +114,7 @@
 
             <p>
                 Hai già un account?
-                <a href="<%=request.getContextPath()%>/WEB-INF/view/login.jsp">Accedi</a>
+                <a href="<%=request.getContextPath()%>/Login">Accedi</a>
             </p>
 
         </div>

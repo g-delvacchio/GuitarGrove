@@ -46,7 +46,7 @@ public class GetProdottoServlet extends HttpServlet {
             }
 
             if (!prodotto.isAttivo()) {
-                response.sendRedirect(request.getContextPath() + "/WEB-INF/view/catalogo.jsp");
+                response.sendRedirect(request.getContextPath() + "/Catalogo");
                 return;
             }
 

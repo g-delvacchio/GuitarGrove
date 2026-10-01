@@ -16,6 +16,12 @@
     <jsp:include page="header.jsp"/>
     <section class="cart">
         <h1>Carrello</h1>
+        
+        <div class="back-container">
+    		<a href="<%=request.getContextPath()%>/Catalogo">
+        		<button type="button">← Continua lo shopping</button>
+    		</a>
+		</div>
 
         <%
             List<Map<String, Object>> items = (List<Map<String, Object>>) request.getAttribute("items");
@@ -74,6 +80,18 @@
         </table>
 
         <h2>Totale: <%= String.format("%.2f", totale) %> €</h2>
+        
+        <form action="<%=request.getContextPath()%>/Carrello"
+        	  method="post"
+      		  onsubmit="return confirm('Sei sicuro di voler svuotare completamente il carrello?');">
+
+    		<input type="hidden" name="action" value="clear">
+
+    		<button type="submit">
+    			Svuota carrello
+    		</button>
+
+		</form>
 
         <% } %>
 
@@ -85,7 +103,7 @@
 
         <p style="color:red">Devi effettuare il login per procedere al checkout</p>
 
-        <a href="<%=request.getContextPath()%>/WEB-INF/view/login.jsp">
+        <a href="<%=request.getContextPath()%>/Login">
             Login
         </a>
 
@@ -95,7 +113,7 @@
 
         <p>Il tuo carrello è vuoto.</p>
 
-        <a href="<%=request.getContextPath()%>/WEB-INF/view/catalogo.jsp">
+        <a href="<%=request.getContextPath()%>/Catalogo">
             Vai al catalogo
         </a>
 

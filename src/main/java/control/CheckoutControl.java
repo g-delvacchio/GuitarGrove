@@ -16,6 +16,9 @@ public class CheckoutControl extends HttpServlet {
 
     private static final String CARD_REGEX = "^[0-9]{16}$";
     private static final String CVV_REGEX = "^[0-9]{3}$";
+    private static final String CAP_REGEX = "^[0-9]{5}$";
+    private static final String CIVICO_REGEX = "^[0-9]{1,5}[A-Za-z]?$";
+    private static final String PLACE_REGEX = "^[A-Za-zÀ-ÖØ-öø-ÿ\\s]{2,50}$";
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -32,11 +35,33 @@ public class CheckoutControl extends HttpServlet {
         String card = request.getParameter("cardNumber");
         String expiry = request.getParameter("expiry");
         String cvv = request.getParameter("cvv");
+        String paese = request.getParameter("paese");
+        String citta = request.getParameter("citta");
+        String cap = request.getParameter("cap");
+        String via = request.getParameter("via");
+        String civico = request.getParameter("civico");
 
         if (card == null || expiry == null || cvv == null || !card.matches(CARD_REGEX) || !cvv.matches(CVV_REGEX)) {
             response.sendRedirect(request.getContextPath() + "/Checkout?error=payment");
             return;
         }
+        
+        if (paese == null || citta == null || cap == null || via == null || civico == null) {
+            response.sendRedirect(request.getContextPath() + "/Checkout?error=address");
+            return;
+        }
+        
+        paese = paese.trim();
+        citta = citta.trim();
+        cap = cap.trim();
+        via = via.trim();
+        civico = civico.trim();
+        
+        if (!paese.matches(PLACE_REGEX) || !citta.matches(PLACE_REGEX) || !cap.matches(CAP_REGEX) || via.length() < 2 || !civico.matches(CIVICO_REGEX)) {
+            response.sendRedirect(request.getContextPath() + "/Checkout?error=address");
+            return;
+        }
+        
         try {
             ProdottoCarrelloDAO cartDao = new ProdottoCarrelloDAO();
             ProdottoDAO prodottoDAO = new ProdottoDAO();
@@ -68,6 +93,11 @@ public class CheckoutControl extends HttpServlet {
             acquisto.setSpedizione(10);
             acquisto.setStato("COMPLETATO");
             acquisto.setPagamento("CARTA");
+            acquisto.setPaeseSpedizione(paese);
+            acquisto.setCittaSpedizione(citta);
+            acquisto.setCapSpedizione(cap);
+            acquisto.setViaSpedizione(via);
+            acquisto.setCivicoSpedizione(civico);
             int orderId = acquistoDAO.doSave(acquisto);
 
             for (ProdottoCarrello pc : carrello) {
@@ -90,7 +120,7 @@ public class CheckoutControl extends HttpServlet {
                 cartDao.doDelete(user.getUserId(), pc.getProductId());
             }
 
-            response.sendRedirect(request.getContextPath() + "/WEB-INF/view/success.jsp");
+            response.sendRedirect(request.getContextPath() + "/Success");
 
         } catch(SQLException e) {
             e.printStackTrace();

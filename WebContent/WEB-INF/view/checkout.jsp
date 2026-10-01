@@ -18,9 +18,6 @@
 <jsp:include page="header.jsp"/>
 
 <%
-    // TUTTO ARRIVA DALLA SERVLET (NO LOGICA SESSIONE QUI)
-    Indirizzo indirizzo = (Indirizzo) request.getAttribute("indirizzo");
-
     List<Map<String, Object>> items = (List<Map<String, Object>>) request.getAttribute("items");
 
     double totale = (Double) request.getAttribute("totale");
@@ -37,26 +34,63 @@
 
     <h1>Checkout</h1>
 
-    <!-- INDIRIZZO -->
-    <div class="box">
+	<form id="checkoutForm"
+      action="<%=request.getContextPath()%>/CheckoutControl"
+      method="post"
+      onsubmit="return checkCheckout(this)">
+      
+      <div class="box">
 
-        <h2>Indirizzo</h2>
-
-        <% if (indirizzo != null) { %>
-
-        <p><strong>Paese:</strong> <%= indirizzo.getPaese() %></p>
-        <p><strong>Città:</strong> <%= indirizzo.getCitta() %></p>
-        <p><strong>CAP:</strong> <%= indirizzo.getCap() %></p>
-        <p><strong>Via:</strong> <%= indirizzo.getVia() %></p>
-        <p><strong>Civico:</strong> <%= indirizzo.getCivico() %></p>
-
-        <% } else { %>
-
-        <p>Nessun indirizzo registrato</p>
-
-        <% } %>
-
-    </div>
+		    <h2>Indirizzo di spedizione</h2>
+		
+		    <label for="paese">Paese:</label>
+		    <input type="text"
+		           id="paese"
+		           name="paese"
+		           required
+		           oninput="validatePaese()">
+		    <span id="errorPaese"></span>
+		    <br>
+		
+		    <label for="citta">Città:</label>
+		    <input type="text"
+		           id="citta"
+		           name="citta"
+		           required
+		           oninput="validateCitta()">
+		    <span id="errorCitta"></span>
+		    <br>
+		
+		    <label for="cap">CAP:</label>
+		    <input type="text"
+		           id="cap"
+		           name="cap"
+		           required
+		           maxlength="10"
+		           oninput="validateCAP()">
+		    <span id="errorCAP"></span>
+		    <br>
+		
+		    <label for="via">Via:</label>
+		    <input type="text"
+		           id="via"
+		           name="via"
+		           required
+		           oninput="validateVia()">
+		    <span id="errorVia"></span>
+		    <br>
+		
+		    <label for="civico">Civico:</label>
+		    <input type="text"
+		           id="civico"
+		           name="civico"
+		           required
+		           maxlength="10"
+		           oninput="validateCivico()">
+		    <span id="errorCivico"></span>
+		    <br>
+		
+		</div>
 
     <!-- CARRELLO -->
     <div class="box">
@@ -110,11 +144,6 @@
 
         <h2>Dati pagamento</h2>
 
-        <form id="checkoutForm"
-              action="<%=request.getContextPath()%>/CheckoutControl"
-              method="post"
-              onsubmit="return checkCheckout(this)">
-
             <label>Numero carta</label>
             <input type="text"
                    id="cardNumber"
@@ -141,11 +170,11 @@
                    oninput="validateCVV()">
             <span id="errorCVV"></span><br>
 
-            <button type="submit">Acquista</button>
+         <button type="submit">Acquista</button>
 
-        </form>
-
-    </div>
+	</div>
+        
+    </form>
 
 </section>
 

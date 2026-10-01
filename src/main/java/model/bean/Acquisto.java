@@ -10,6 +10,11 @@ public class Acquisto {
     private String stato;
     private LocalDateTime dataAcquisto;
     private String pagamento;
+    private String paeseSpedizione;
+    private String cittaSpedizione;
+    private String capSpedizione;
+    private String viaSpedizione;
+    private String civicoSpedizione;
 
     public Acquisto() {}
 
@@ -33,5 +38,20 @@ public class Acquisto {
 
     public String getPagamento() { return pagamento; }
     public void setPagamento(String pagamento) { this.pagamento = pagamento; }
+    
+    public String getPaeseSpedizione() { return paeseSpedizione; }
+    public void setPaeseSpedizione(String paeseSpedizione) { this.paeseSpedizione = paeseSpedizione; }
+
+    public String getCittaSpedizione() { return cittaSpedizione; }
+    public void setCittaSpedizione(String cittaSpedizione) { this.cittaSpedizione = cittaSpedizione; }
+
+    public String getCapSpedizione() { return capSpedizione; }
+    public void setCapSpedizione(String capSpedizione) { this.capSpedizione = capSpedizione; }
+
+    public String getViaSpedizione() { return viaSpedizione; }
+    public void setViaSpedizione(String viaSpedizione) { this.viaSpedizione = viaSpedizione; }
+
+    public String getCivicoSpedizione() { return civicoSpedizione; }
+    public void setCivicoSpedizione(String civicoSpedizione) { this.civicoSpedizione = civicoSpedizione; }
 
 }

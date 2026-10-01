@@ -57,6 +57,15 @@
             <p><strong>Utente:</strong> <%= utente.getUsername() %></p>
             <p><strong>Totale:</strong> € <%= a.getTotale() %></p>
             <p><strong>Data di acquisto:</strong> € <%= a.getDataAcquisto() %></p>
+            
+            <p>
+			    <strong>Indirizzo di spedizione:</strong>
+			    <%= a.getViaSpedizione() %>
+			    <%= a.getCivicoSpedizione() %>,
+			    <%= a.getCapSpedizione() %>
+			    <%= a.getCittaSpedizione() %>,
+			    <%= a.getPaeseSpedizione() %>
+		    </p>
         </div>
 
         <div class="ordine-prodotti">

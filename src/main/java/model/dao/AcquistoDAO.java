@@ -10,8 +10,9 @@ public class AcquistoDAO {
     public int doSave(Acquisto a) throws SQLException {
 
         String sql = "INSERT INTO acquisto " +
-                "(user_id, totale, spedizione, stato, data_acquisto, pagamento) " +
-                "VALUES (?, ?, ?, ?, ?, ?)";
+        		"(user_id, totale, spedizione, stato, data_acquisto, pagamento, " +
+                "paese_spedizione, citta_spedizione, cap_spedizione, via_spedizione, civico_spedizione) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection con = ConPool.getConnection();
              PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
@@ -28,6 +29,11 @@ public class AcquistoDAO {
             }
 
             ps.setString(6, a.getPagamento());
+            ps.setString(7, a.getPaeseSpedizione());
+            ps.setString(8, a.getCittaSpedizione());
+            ps.setString(9, a.getCapSpedizione());
+            ps.setString(10, a.getViaSpedizione());
+            ps.setString(11, a.getCivicoSpedizione());
 
             ps.executeUpdate();
 
@@ -136,6 +142,11 @@ public class AcquistoDAO {
         }
 
         a.setPagamento(rs.getString("pagamento"));
+        a.setPaeseSpedizione(rs.getString("paese_spedizione"));
+        a.setCittaSpedizione(rs.getString("citta_spedizione"));
+        a.setCapSpedizione(rs.getString("cap_spedizione"));
+        a.setViaSpedizione(rs.getString("via_spedizione"));
+        a.setCivicoSpedizione(rs.getString("civico_spedizione"));
 
         return a;
     }

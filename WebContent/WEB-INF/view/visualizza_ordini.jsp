@@ -48,6 +48,16 @@
         <p><strong>Spedizione:</strong> <%= ordine.getSpedizione() %> €</p>
         <p><strong>Stato:</strong> <%= ordine.getStato() %></p>
         <p><strong>Data di acquisto:</strong> <%= ordine.getDataAcquisto() %></p>
+        
+        <h4>Indirizzo di spedizione</h4>
+
+		<p>
+		    <%= ordine.getViaSpedizione() %>
+		    <%= ordine.getCivicoSpedizione() %>,
+		    <%= ordine.getCapSpedizione() %>
+		    <%= ordine.getCittaSpedizione() %>,
+		    <%= ordine.getPaeseSpedizione() %>
+		</p>
 
         <h4>Prodotti acquistati:</h4>
 

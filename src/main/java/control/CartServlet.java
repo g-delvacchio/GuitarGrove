@@ -123,18 +123,52 @@ public class CartServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
 
-        String action = request.getParameter("action");
+    	String action = request.getParameter("action");
+
+        if (action == null) {
+            response.sendRedirect(request.getContextPath() + "/Carrello");
+            return;
+        }
+
+        HttpSession session = request.getSession();
+        Utente user = (Utente) session.getAttribute("user");
+
+        if ("clear".equals(action)) {
+
+            try {
+                if (user != null) {
+
+                    ProdottoCarrelloDAO cdao = new ProdottoCarrelloDAO();
+
+                    List<ProdottoCarrello> items =
+                            cdao.doRetrieveByCond("user_id=" + user.getUserId());
+
+                    if (items != null) {
+                        for (ProdottoCarrello pc : items) {
+                            cdao.doDelete(user.getUserId(), pc.getProductId());
+                        }
+                    }
+
+                } else {
+                    session.removeAttribute(SESSION_CART);
+                }
+
+            } catch (Exception e) {
+                throw new IOException(e);
+            }
+
+            response.sendRedirect(request.getContextPath() + "/Carrello");
+            return;
+        }
+
         String idParam = request.getParameter("id");
 
-        if (action == null || idParam == null) {
+        if (idParam == null) {
             response.sendRedirect(request.getContextPath() + "/Carrello");
             return;
         }
 
         int productId = Integer.parseInt(idParam);
-
-        HttpSession session = request.getSession();
-        Utente user = (Utente) session.getAttribute("user");
 
         try {
 

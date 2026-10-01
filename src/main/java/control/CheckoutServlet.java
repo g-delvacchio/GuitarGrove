@@ -23,8 +23,6 @@ public class CheckoutServlet extends HttpServlet {
             return;
         }
 
-        Indirizzo indirizzo = (Indirizzo) session.getAttribute("indirizzo");
-
         List<Map<String, Object>> items = new ArrayList<>();
         double totale = 0;
 
@@ -67,7 +65,6 @@ public class CheckoutServlet extends HttpServlet {
 
         request.setAttribute("items", items);
         request.setAttribute("totale", totale);
-        request.setAttribute("indirizzo", indirizzo);
 
         request.getRequestDispatcher("/WEB-INF/view/checkout.jsp")
                 .forward(request, response);
