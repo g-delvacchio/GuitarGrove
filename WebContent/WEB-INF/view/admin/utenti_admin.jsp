@@ -28,7 +28,7 @@
 <h1>Gestione Utenti</h1>
 
 <div class="back-container">
-    <a href="<%=request.getContextPath()%>/WEB-INF/view/admin/admin.jsp">
+    <a href="<%=request.getContextPath()%>/Admin">
         <button type="button">← Torna indietro</button>
     </a>
 </div>
