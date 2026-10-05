@@ -15,61 +15,266 @@ import java.sql.SQLException;
 public class UpdateProdottoAdminServlet extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request,
+                          HttpServletResponse response)
             throws ServletException, IOException {
 
         HttpSession session = request.getSession(false);
 
         if (session == null) {
-            response.sendRedirect(request.getContextPath() + "/index.jsp");
+            response.sendRedirect(
+                    request.getContextPath() + "/index.jsp"
+            );
             return;
         }
 
-        Utente user = (Utente) session.getAttribute("user");
+        Utente user =
+                (Utente) session.getAttribute("user");
 
         if (user == null || !user.isAdmin()) {
-            response.sendRedirect(request.getContextPath() + "/index.jsp");
+            response.sendRedirect(
+                    request.getContextPath() + "/index.jsp"
+            );
             return;
         }
 
         try {
-            int id = Integer.parseInt(request.getParameter("id"));
-            String action = request.getParameter("action");
 
-            ProdottoDAO dao = new ProdottoDAO();
+            int id =
+                    Integer.parseInt(
+                            request.getParameter("id")
+                    );
 
-            Prodotto p = dao.doRetrieveByKey(id);
+            String action =
+                    request.getParameter("action");
 
-            if (p == null) {
-                response.sendRedirect(request.getContextPath() + "/AdminProdottiServlet");
+            if (action == null) {
+
+                response.sendRedirect(
+                        request.getContextPath()
+                                + "/AdminProdottiServlet?error=action"
+                );
+
                 return;
             }
 
-            switch (action) {
+            ProdottoDAO dao = new ProdottoDAO();
 
-                case "stock":
+            Prodotto p =
+                    dao.doRetrieveByKey(id);
 
-                    int stock = Integer.parseInt(request.getParameter("stock"));
+            if (p == null) {
 
-                    if (stock < 0) stock = 0;
+                response.sendRedirect(
+                        request.getContextPath()
+                                + "/AdminProdottiServlet?error=notfound"
+                );
 
-                    p.setStock(stock);
-                    dao.doSaveOrUpdate(p);
-                    break;
-
-                case "attivo":
-
-                    int attivo = Integer.parseInt(request.getParameter("attivo"));
-
-                    p.setAttivo(attivo == 1);
-                    dao.doSaveOrUpdate(p);
-                    break;
+                return;
             }
 
-        } catch (SQLException | NumberFormatException e) {
+
+            switch (action) {
+
+
+                /*
+                 * MODIFICA VELOCE STOCK
+                 */
+                case "stock":
+
+                    int stock =
+                            Integer.parseInt(
+                                    request.getParameter("stock")
+                            );
+
+                    if (stock < 0) {
+                        stock = 0;
+                    }
+
+                    p.setStock(stock);
+
+                    dao.doSaveOrUpdate(p);
+
+                    break;
+
+
+                /*
+                 * MODIFICA VELOCE STATO
+                 */
+                case "attivo":
+
+                    int attivo =
+                            Integer.parseInt(
+                                    request.getParameter("attivo")
+                            );
+
+                    p.setAttivo(attivo == 1);
+
+                    dao.doSaveOrUpdate(p);
+
+                    break;
+
+
+                /*
+                 * MODIFICA COMPLETA PRODOTTO
+                 */
+                case "completo":
+
+                    String nome =
+                            request.getParameter("nome");
+
+                    String marca =
+                            request.getParameter("marca");
+
+                    String modello =
+                            request.getParameter("modello");
+
+                    String descrizione =
+                            request.getParameter("descrizione");
+
+                    String categoria =
+                            request.getParameter("categoria");
+
+                    String immagine =
+                            request.getParameter("immagine");
+
+                    String prezzoParam =
+                            request.getParameter("prezzo");
+
+                    String stockParam =
+                            request.getParameter("stock");
+
+                    String attivoParam =
+                            request.getParameter("attivo");
+
+
+                    /*
+                     * VALIDAZIONE CAMPI
+                     */
+                    if (nome == null || nome.trim().isEmpty()
+                            || marca == null || marca.trim().isEmpty()
+                            || modello == null || modello.trim().isEmpty()
+                            || categoria == null || categoria.trim().isEmpty()
+                            || immagine == null || immagine.trim().isEmpty()
+                            || prezzoParam == null
+                            || stockParam == null
+                            || attivoParam == null) {
+
+                        request.setAttribute(
+                                "error",
+                                "Compila tutti i campi obbligatori"
+                        );
+
+                        request.setAttribute(
+                                "prodotto",
+                                p
+                        );
+
+                        request.getRequestDispatcher(
+                                "/WEB-INF/view/admin/form_prodotto_admin.jsp"
+                        ).forward(request, response);
+
+                        return;
+                    }
+
+
+                    double prezzo =
+                            Double.parseDouble(prezzoParam);
+
+                    int nuovoStock =
+                            Integer.parseInt(stockParam);
+
+
+                    if (prezzo < 0 || nuovoStock < 0) {
+
+                        request.setAttribute(
+                                "error",
+                                "Prezzo e stock non possono essere negativi"
+                        );
+
+                        request.setAttribute(
+                                "prodotto",
+                                p
+                        );
+
+                        request.getRequestDispatcher(
+                                "/WEB-INF/view/admin/form_prodotto_admin.jsp"
+                        ).forward(request, response);
+
+                        return;
+                    }
+
+
+                    /*
+                     * AGGIORNAMENTO BEAN
+                     */
+
+                    p.setNome(nome.trim());
+
+                    p.setMarca(marca.trim());
+
+                    p.setModello(modello.trim());
+
+                    if (descrizione != null) {
+                        p.setDescrizione(
+                                descrizione.trim()
+                        );
+                    }
+
+                    p.setPrezzo(prezzo);
+
+                    p.setStock(nuovoStock);
+
+                    p.setCategoria(
+                            categoria.trim()
+                    );
+
+                    p.setAttivo(
+                            "1".equals(attivoParam)
+                    );
+
+                    p.setImmagine(
+                            immagine.trim()
+                    );
+
+
+                    /*
+                     * UPDATE DATABASE
+                     */
+                    dao.doSaveOrUpdate(p);
+
+                    break;
+
+
+                default:
+
+                    response.sendRedirect(
+                            request.getContextPath()
+                                    + "/AdminProdottiServlet?error=action"
+                    );
+
+                    return;
+            }
+
+
+        } catch (NumberFormatException e) {
+
+            response.sendRedirect(
+                    request.getContextPath()
+                            + "/AdminProdottiServlet?error=format"
+            );
+
+            return;
+
+        } catch (SQLException e) {
+
             throw new ServletException(e);
         }
 
-        response.sendRedirect(request.getContextPath() + "/AdminProdottiServlet");
+
+        response.sendRedirect(
+                request.getContextPath()
+                        + "/AdminProdottiServlet?success=update"
+        );
     }
 }

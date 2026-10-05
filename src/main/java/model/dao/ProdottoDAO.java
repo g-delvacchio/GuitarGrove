@@ -43,8 +43,12 @@ public class ProdottoDAO {
             String sql = """
                     UPDATE prodotto
                     SET nome=?,
+                        marca=?,
+                        modello=?,
+                        descrizione=?,
                         prezzo=?,
                         stock=?,
+                        categoria=?,
                         attivo=?,
                         immagine=?
                     WHERE product_id=?
@@ -54,11 +58,15 @@ public class ProdottoDAO {
                  PreparedStatement ps = con.prepareStatement(sql)) {
 
                 ps.setString(1, p.getNome());
-                ps.setDouble(2, p.getPrezzo());
-                ps.setInt(3, p.getStock());
-                ps.setBoolean(4, p.isAttivo());
-                ps.setString(5, p.getImmagine());
-                ps.setInt(6, p.getProductId());
+                ps.setString(2, p.getMarca());
+                ps.setString(3, p.getModello());
+                ps.setString(4, p.getDescrizione());
+                ps.setDouble(5, p.getPrezzo());
+                ps.setInt(6, p.getStock());
+                ps.setString(7, p.getCategoria());
+                ps.setBoolean(8, p.isAttivo());
+                ps.setString(9, p.getImmagine());
+                ps.setInt(10, p.getProductId());
 
                 ps.executeUpdate();
             }

@@ -9,32 +9,118 @@
         return;
     }
 
-    List<Prodotto> prodotti = (List<Prodotto>) request.getAttribute("prodotti");
+    List<Prodotto> prodotti =
+            (List<Prodotto>) request.getAttribute("prodotti");
+
+    String success = request.getParameter("success");
+    String error = request.getParameter("error");
 %>
+
 
 <!DOCTYPE html>
 <html lang="it">
 
 <head>
+
     <title>Prodotti Admin</title>
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/prodotti_admin.css">
+
+    <link rel="stylesheet"
+          href="<%=request.getContextPath()%>/styles/style.css">
+
+    <link rel="stylesheet"
+          href="<%=request.getContextPath()%>/styles/prodotti_admin.css">
+
 </head>
+
 
 <body>
 
 <jsp:include page="../header.jsp"/>
 
+
 <h1>Gestione Prodotti</h1>
 
+
+<!-- ========================= -->
+<!-- MESSAGGI -->
+<!-- ========================= -->
+
+<% if ("insert".equals(success)) { %>
+
+    <p style="color:green;">
+        Prodotto inserito con successo.
+    </p>
+
+<% } else if ("update".equals(success)) { %>
+
+    <p style="color:green;">
+        Prodotto modificato con successo.
+    </p>
+
+<% } %>
+
+
+<% if (error != null) { %>
+
+    <p style="color:red;">
+
+        <% if ("notfound".equals(error)) { %>
+
+            Prodotto non trovato.
+
+        <% } else if ("format".equals(error)) { %>
+
+            ID o valore non valido.
+
+        <% } else if ("db".equals(error)) { %>
+
+            Errore durante l'accesso al database.
+
+        <% } else if ("action".equals(error)) { %>
+
+            Operazione non valida.
+
+        <% } else { %>
+
+            Si è verificato un errore durante l'operazione.
+
+        <% } %>
+
+    </p>
+
+<% } %>
+
+
+<!-- ========================= -->
+<!-- PULSANTI -->
+<!-- ========================= -->
+
 <div class="back-container">
+
     <a href="<%=request.getContextPath()%>/Admin">
-        <button type="button">← Torna indietro</button>
+
+        <button type="button">
+            ← Torna indietro
+        </button>
+
     </a>
+
+
+    <a href="<%=request.getContextPath()%>/InsertProdottoAdminServlet">
+
+        <button type="button">
+            + Inserisci prodotto
+        </button>
+
+    </a>
+
 </div>
 
+
 <% if (prodotti == null || prodotti.isEmpty()) { %>
-<p>Nessun prodotto</p>
+
+    <p>Nessun prodotto</p>
+
 <% } else { %>
 
 <table border="1">
@@ -87,22 +173,38 @@
         </td>
 
         <!-- AZIONI -->
-        <td>
-
-            <!-- ELIMINA PRODOTTO -->
-            <form action="<%=request.getContextPath()%>/DeleteProdottoAdminServlet"
-                  method="post"
-                  onsubmit="return confirm('Sei sicuro di voler eliminare questo prodotto?');">
-
-                <input type="hidden" name="id" value="<%= p.getProductId() %>">
-
-                <button type="submit" style="color:red;">
-                    Elimina
-                </button>
-
-            </form>
-
-        </td>
+		<td>
+		
+		    <!-- MODIFICA PRODOTTO -->
+		
+		    <a href="<%=request.getContextPath()%>/EditProdottoAdminServlet?id=<%=p.getProductId()%>">
+		
+		        <button type="button">
+		            Modifica
+		        </button>
+		
+		    </a>
+		
+		
+		    <!-- ELIMINA PRODOTTO -->
+		
+		    <form
+		        action="<%=request.getContextPath()%>/DeleteProdottoAdminServlet"
+		        method="post"
+		        onsubmit="return confirm('Sei sicuro di voler eliminare questo prodotto?');">
+		
+		        <input type="hidden"
+		               name="id"
+		               value="<%= p.getProductId() %>">
+		
+		        <button type="submit"
+		                style="color:red;">
+		            Elimina
+		        </button>
+		
+		    </form>
+		
+		</td>
     </tr>
 
     <% } %>
