@@ -5,6 +5,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 
 import model.bean.Utente;
+import model.bean.Prodotto;
 import model.dao.ProdottoDAO;
 
 import java.io.IOException;
@@ -39,10 +40,24 @@ public class DeleteProdottoAdminServlet extends HttpServlet {
         }
 
         try {
+        	
             int productId = Integer.parseInt(idParam);
 
             ProdottoDAO dao = new ProdottoDAO();
-            dao.doDelete(productId);
+
+            Prodotto prodotto = dao.doRetrieveByKey(productId);
+
+            if (prodotto == null) {
+                response.sendRedirect(
+                        request.getContextPath()
+                        + "/AdminProdottiServlet?error=notfound"
+                );
+                return;
+            }
+
+            prodotto.setAttivo(false);
+
+            dao.doSaveOrUpdate(prodotto);
 
         } catch (NumberFormatException e) {
             response.sendRedirect(request.getContextPath() + "/AdminProdottiServlet?error=format");
