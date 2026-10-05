@@ -29,6 +29,7 @@
                 <form id="loginForm"
                       action="<%=request.getContextPath()%>/Login"
                       method="post"
+                      novalidate
                       onsubmit="return checkLogin()">
 
                     <label for="email">Email</label>
@@ -36,7 +37,7 @@
                            id="email"
                            name="email"
                            required
-                           oninput="validateLoginEmail()">
+                           onchange="validateLoginEmail()">
 
                     <span id="errorLoginEmail"></span>
 
@@ -45,7 +46,7 @@
                            id="password"
                            name="password"
                            required
-                           oninput="validateLoginPassword()">
+                           onchange="validateLoginPassword()">
 
                     <span id="errorLoginPassword"></span>
 

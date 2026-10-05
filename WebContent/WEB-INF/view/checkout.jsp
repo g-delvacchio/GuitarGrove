@@ -37,6 +37,7 @@
 	<form id="checkoutForm"
       action="<%=request.getContextPath()%>/CheckoutControl"
       method="post"
+      novalidate
       onsubmit="return checkCheckout(this)">
       
       <div class="box">
@@ -48,7 +49,7 @@
 		           id="paese"
 		           name="paese"
 		           required
-		           oninput="validatePaese()">
+		           onchange="validatePaese()">
 		    <span id="errorPaese"></span>
 		    <br>
 		
@@ -57,7 +58,7 @@
 		           id="citta"
 		           name="citta"
 		           required
-		           oninput="validateCitta()">
+		           onchange="validateCitta()">
 		    <span id="errorCitta"></span>
 		    <br>
 		
@@ -67,7 +68,7 @@
 		           name="cap"
 		           required
 		           maxlength="10"
-		           oninput="validateCAP()">
+		           onchange="validateCAP()">
 		    <span id="errorCAP"></span>
 		    <br>
 		
@@ -76,7 +77,7 @@
 		           id="via"
 		           name="via"
 		           required
-		           oninput="validateVia()">
+		           onchange="validateVia()">
 		    <span id="errorVia"></span>
 		    <br>
 		
@@ -86,7 +87,7 @@
 		           name="civico"
 		           required
 		           maxlength="10"
-		           oninput="validateCivico()">
+		           onchange="validateCivico()">
 		    <span id="errorCivico"></span>
 		    <br>
 		
@@ -150,7 +151,7 @@
                    name="cardNumber"
                    maxlength="16"
                    required
-                   oninput="validateCardNumber()">
+                   onchange="validateCardNumber()">
             <span id="errorCardNumber"></span><br>
 
             <label>Scadenza</label>
@@ -158,7 +159,7 @@
                    id="expiry"
                    name="expiry"
                    required
-                   oninput="validateExpiry()">
+                   onchange="validateExpiry()">
             <span id="errorExpiry"></span><br>
 
             <label>CVV</label>
@@ -167,7 +168,7 @@
                    name="cvv"
                    maxlength="3"
                    required
-                   oninput="validateCVV()">
+                   onchange="validateCVV()">
             <span id="errorCVV"></span><br>
 
          <button type="submit">Acquista</button>

@@ -22,6 +22,12 @@ const cardError = "Il numero della carta deve contenere 16 cifre";
 const expiryError = "La carta è scaduta";
 const cvvError = "Il CVV deve contenere 3 cifre";
 
+function getAddressForm() {
+
+    return document.getElementById("regForm")
+        || document.getElementById("checkoutForm");
+}
+
 /* =========================
    GENERICA VALIDAZIONE
 ========================= */
@@ -133,7 +139,7 @@ function validateTelefono() {
    PAESE
 ========================= */
 function validatePaese() {
-    let form = document.getElementById("regForm");
+	let form = getAddressForm();
     let span = document.getElementById("errorPaese");
 
     let paese = form.paese.value.trim();
@@ -157,7 +163,7 @@ function validatePaese() {
    CITTA
 ========================= */
 function validateCitta() {
-    let form = document.getElementById("regForm");
+	let form = getAddressForm();
     let span = document.getElementById("errorCitta");
 
     let citta = form.citta.value.trim();
@@ -181,7 +187,7 @@ function validateCitta() {
    CAP
 ========================= */
 function validateCAP() {
-    let form = document.getElementById("regForm");
+	let form = getAddressForm();
     return validateField(
         form.cap,
         capPattern,
@@ -194,7 +200,7 @@ function validateCAP() {
    VIA (minimo semplice)
 ========================= */
 function validateVia() {
-    let form = document.getElementById("regForm");
+	let form = getAddressForm();
     let span = document.getElementById("errorVia");
 
     if (form.via.value.trim().length >= 2) {
@@ -211,7 +217,7 @@ function validateVia() {
    CIVICO
 ========================= */
 function validateCivico() {
-    let form = document.getElementById("regForm");
+	let form = getAddressForm();
     let span = document.getElementById("errorCivico");
 
     let civico = form.civico.value.trim();
@@ -237,25 +243,54 @@ function validateCivico() {
 ========================= */
 function checkSignup(form) {
 
-    return (
-        validateUsername() &&
-        validateNome() &&
-        validateCognome() &&
-        validateEmail() &&
-        validatePassword() &&
-        pswMatching() &&
-        validateTelefono() &&
-        validatePaese() &&
-        validateCitta() &&
-        validateCAP() &&
-        validateVia() &&
-        validateCivico()
-    );
+    const usernameOk = validateUsername();
+    const nomeOk = validateNome();
+    const cognomeOk = validateCognome();
+    const emailOk = validateEmail();
+    const passwordOk = validatePassword();
+    const matchOk = pswMatching();
+    const telefonoOk = validateTelefono();
+    const paeseOk = validatePaese();
+    const cittaOk = validateCitta();
+    const capOk = validateCAP();
+    const viaOk = validateVia();
+    const civicoOk = validateCivico();
+
+    return usernameOk &&
+           nomeOk &&
+           cognomeOk &&
+           emailOk &&
+           passwordOk &&
+           matchOk &&
+           telefonoOk &&
+           paeseOk &&
+           cittaOk &&
+           capOk &&
+           viaOk &&
+           civicoOk;
 }
 
 /* =========================
    CAMBIO PASSWORD ACCOUNT
 ========================= */
+
+function validateOldPassword() {
+
+    const form = document.getElementById("changePasswordForm");
+    const span = document.getElementById("errorOldPassword");
+
+    if (form.oldPassword.value.trim() === "") {
+
+        span.innerHTML = "Inserisci la password attuale";
+        span.style.color = "red";
+
+        return false;
+    }
+
+    span.innerHTML = "";
+
+    return true;
+}
 
 function validateNewPassword() {
 
@@ -289,11 +324,15 @@ function matchNewPassword() {
     }
 }
 
-function checkChangePassword(form){
+function checkChangePassword(form) {
 
-    return validateNewPassword() &&
-        matchNewPassword();
+    const oldOk = validateOldPassword();
+    const newOk = validateNewPassword();
+    const matchOk = matchNewPassword();
 
+    return oldOk &&
+           newOk &&
+           matchOk;
 }
 
 function validateLoginEmail() {
@@ -324,8 +363,11 @@ function validateLoginPassword() {
 }
 
 function checkLogin() {
-    return validateLoginEmail() &&
-        validateLoginPassword();
+
+    const emailOk = validateLoginEmail();
+    const passwordOk = validateLoginPassword();
+
+    return emailOk && passwordOk;
 }
 
 
@@ -383,12 +425,24 @@ function validateCardNumber() {
     );
 }
 
-function checkCheckout(form){
+function checkCheckout(form) {
 
-    return (
-        validateCardNumber() &&
-        validateExpiry() &&
-        validateCVV()
-    );
+    const paeseOk = validatePaese();
+    const cittaOk = validateCitta();
+    const capOk = validateCAP();
+    const viaOk = validateVia();
+    const civicoOk = validateCivico();
 
+    const cardOk = validateCardNumber();
+    const expiryOk = validateExpiry();
+    const cvvOk = validateCVV();
+
+    return paeseOk &&
+           cittaOk &&
+           capOk &&
+           viaOk &&
+           civicoOk &&
+           cardOk &&
+           expiryOk &&
+           cvvOk;
 }

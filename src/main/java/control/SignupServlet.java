@@ -30,6 +30,15 @@ public class SignupServlet extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/view/signup.jsp")
                 .forward(request, response);
     }
+    
+    @Override
+    protected void doGet(HttpServletRequest request,
+                         HttpServletResponse response)
+            throws ServletException, IOException {
+
+        request.getRequestDispatcher("/WEB-INF/view/signup.jsp")
+               .forward(request, response);
+    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

@@ -95,18 +95,30 @@
         <form id="changePasswordForm"
               action="<%=request.getContextPath()%>/ChangePasswordServlet"
               method="post"
+              novalidate
               onsubmit="return checkChangePassword(this);">
 
-            <label>Vecchia password</label>
-            <input type="password" name="oldPassword" required>
+            <label for="oldPassword">
+			    Vecchia password
+			</label>
+			
+			<input type="password"
+			       id="oldPassword"
+			       name="oldPassword"
+			       required
+			       onchange="validateOldPassword()">
+			
+			<span id="errorOldPassword"
+			      style="display:block;color:red;margin-bottom:10px;">
+			</span>
 
             <label>Nuova password</label>
-            <input type="password" name="newPassword" onkeyup="validateNewPassword()" required>
+            <input type="password" name="newPassword" onchange="validateNewPassword()" required>
 
             <span id="errorNewPassword" style="display:block;color:red;margin-bottom:10px;"></span>
 
             <label>Conferma nuova password</label>
-            <input type="password" name="confirmPassword" onkeyup="matchNewPassword()" required>
+            <input type="password" name="confirmPassword" onchange="matchNewPassword()" required>
 
             <span id="errorConfirmPassword" style="display:block;color:red;margin-bottom:15px;"></span>
 
