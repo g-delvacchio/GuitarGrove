@@ -19,14 +19,14 @@ public class DeleteAccountServlet extends HttpServlet {
         HttpSession session = request.getSession(false);
 
         if (session == null) {
-            response.sendRedirect("/Login");
+            response.sendRedirect(request.getContextPath() + "/Login");
             return;
         }
 
         Utente user = (Utente) session.getAttribute("user");
 
         if (user == null) {
-            response.sendRedirect("/Login");
+            response.sendRedirect(request.getContextPath() + "/Login");
             return;
         }
 
@@ -44,6 +44,7 @@ public class DeleteAccountServlet extends HttpServlet {
 
         } catch (Exception e) {
             response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            return;
         }
 
         response.sendRedirect(request.getContextPath() + "/index.jsp");

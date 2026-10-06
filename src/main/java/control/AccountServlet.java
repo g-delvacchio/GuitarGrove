@@ -34,6 +34,7 @@ public class AccountServlet extends HttpServlet {
 
         } catch (Exception e) {
             response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            return;
         }
 
         request.getRequestDispatcher("/WEB-INF/view/account.jsp")
