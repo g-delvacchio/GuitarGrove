@@ -89,9 +89,6 @@
 
         <% } %>
 
-
-        <!-- NOME -->
-
         <label for="nome">
             Nome:
         </label>
@@ -104,9 +101,6 @@
                value="<%= modifica ? prodotto.getNome() : "" %>">
 
         <br><br>
-
-
-        <!-- MARCA -->
 
         <label for="marca">
             Marca:
@@ -121,9 +115,6 @@
 
         <br><br>
 
-
-        <!-- MODELLO -->
-
         <label for="modello">
             Modello:
         </label>
@@ -136,9 +127,6 @@
                value="<%= modifica ? prodotto.getModello() : "" %>">
 
         <br><br>
-
-
-        <!-- DESCRIZIONE -->
 
         <label for="descrizione">
             Descrizione:
@@ -154,9 +142,6 @@
 
         <br><br>
 
-
-        <!-- PREZZO -->
-
         <label for="prezzo">
             Prezzo:
         </label>
@@ -171,9 +156,6 @@
 
         <br><br>
 
-
-        <!-- STOCK -->
-
         <label for="stock">
             Stock:
         </label>
@@ -186,9 +168,6 @@
                value="<%= modifica ? prodotto.getStock() : "0" %>">
 
         <br><br>
-
-
-        <!-- CATEGORIA -->
 
         <label for="categoria">
             Categoria:
@@ -276,9 +255,6 @@
 
         <br><br>
 
-
-        <!-- ATTIVO -->
-
         <label for="attivo">
             Stato:
         </label>
@@ -302,9 +278,6 @@
         </select>
 
         <br><br>
-
-
-        <!-- IMMAGINE -->
 
         <label for="immagine">
             Percorso immagine:

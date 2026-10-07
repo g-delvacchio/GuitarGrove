@@ -28,9 +28,6 @@ function getAddressForm() {
         || document.getElementById("checkoutForm");
 }
 
-/* =========================
-   GENERICA VALIDAZIONE
-========================= */
 function validateField(input, pattern, span, message) {
     if (input.value.match(pattern)) {
         span.innerHTML = "";
@@ -43,9 +40,6 @@ function validateField(input, pattern, span, message) {
     }
 }
 
-/* =========================
-   USERNAME
-========================= */
 function validateUsername() {
     let form = document.getElementById("regForm");
     return validateField(
@@ -56,9 +50,6 @@ function validateUsername() {
     );
 }
 
-/* =========================
-   NOME / COGNOME / CITTA / PAESE
-========================= */
 function validateNome() {
     let form = document.getElementById("regForm");
     return validateField(
@@ -79,9 +70,6 @@ function validateCognome() {
     );
 }
 
-/* =========================
-   EMAIL
-========================= */
 function validateEmail() {
     let form = document.getElementById("regForm");
     return validateField(
@@ -92,9 +80,6 @@ function validateEmail() {
     );
 }
 
-/* =========================
-   PASSWORD
-========================= */
 function validatePassword() {
     let form = document.getElementById("regForm");
 
@@ -107,9 +92,6 @@ function validatePassword() {
     }
 }
 
-/* =========================
-   CONFERMA PASSWORD
-========================= */
 function pswMatching() {
     let form = document.getElementById("regForm");
 
@@ -122,9 +104,6 @@ function pswMatching() {
     }
 }
 
-/* =========================
-   TELEFONO
-========================= */
 function validateTelefono() {
     let form = document.getElementById("regForm");
     return validateField(
@@ -135,16 +114,12 @@ function validateTelefono() {
     );
 }
 
-/* =========================
-   PAESE
-========================= */
 function validatePaese() {
 	let form = getAddressForm();
     let span = document.getElementById("errorPaese");
 
     let paese = form.paese.value.trim();
 
-    // permette lettere, spazi e accenti
     const paesePattern = /^[A-Za-zÀ-ÿ\s]{2,50}$/;
 
     if (paese.match(paesePattern)) {
@@ -159,9 +134,7 @@ function validatePaese() {
     span.style.color = "red";
     return false;
 }
-/* =========================
-   CITTA
-========================= */
+
 function validateCitta() {
 	let form = getAddressForm();
     let span = document.getElementById("errorCitta");
@@ -183,9 +156,6 @@ function validateCitta() {
     return false;
 }
 
-/* =========================
-   CAP
-========================= */
 function validateCAP() {
 	let form = getAddressForm();
     return validateField(
@@ -196,9 +166,6 @@ function validateCAP() {
     );
 }
 
-/* =========================
-   VIA (minimo semplice)
-========================= */
 function validateVia() {
 	let form = getAddressForm();
     let span = document.getElementById("errorVia");
@@ -213,16 +180,12 @@ function validateVia() {
     }
 }
 
-/* =========================
-   CIVICO
-========================= */
 function validateCivico() {
 	let form = getAddressForm();
     let span = document.getElementById("errorCivico");
 
     let civico = form.civico.value.trim();
 
-    // numeri + eventuale lettera (es. 12, 12A, 5B)
     const civicoPattern = /^[0-9]{1,5}[A-Za-z]?$/;
 
     if (civico.length > 0 && civico.length <= 6 && civico.match(civicoPattern)) {
@@ -238,9 +201,6 @@ function validateCivico() {
     return false;
 }
 
-/* =========================
-   SUBMIT CHECK
-========================= */
 function checkSignup(form) {
 
     const usernameOk = validateUsername();
@@ -269,10 +229,6 @@ function checkSignup(form) {
            viaOk &&
            civicoOk;
 }
-
-/* =========================
-   CAMBIO PASSWORD ACCOUNT
-========================= */
 
 function validateOldPassword() {
 
@@ -369,9 +325,6 @@ function checkLogin() {
 
     return emailOk && passwordOk;
 }
-
-
-
 
 function validateExpiry() {
 

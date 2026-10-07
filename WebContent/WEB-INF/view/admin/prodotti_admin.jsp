@@ -40,11 +40,6 @@
 
 <h1>Gestione Prodotti</h1>
 
-
-<!-- ========================= -->
-<!-- MESSAGGI -->
-<!-- ========================= -->
-
 <% if ("insert".equals(success)) { %>
 
     <p style="color:green;">
@@ -89,11 +84,6 @@
     </p>
 
 <% } %>
-
-
-<!-- ========================= -->
-<!-- PULSANTI -->
-<!-- ========================= -->
 
 <div class="back-container">
 
@@ -145,7 +135,6 @@
         <td><%= p.getModello() %></td>
         <td><%= String.format("%.2f", p.getPrezzo()) %></td>
 
-        <!-- STOCK -->
         <td>
             <form action="<%=request.getContextPath()%>/UpdateProdottoAdminServlet" method="post">
                 <input type="hidden" name="id" value="<%= p.getProductId() %>">
@@ -157,7 +146,6 @@
             </form>
         </td>
 
-        <!-- ATTIVO -->
         <td>
             <form action="<%=request.getContextPath()%>/UpdateProdottoAdminServlet" method="post">
                 <input type="hidden" name="id" value="<%= p.getProductId() %>">
@@ -172,10 +160,7 @@
             </form>
         </td>
 
-        <!-- AZIONI -->
 		<td>
-		
-		    <!-- MODIFICA PRODOTTO -->
 		
 		    <a href="<%=request.getContextPath()%>/EditProdottoAdminServlet?id=<%=p.getProductId()%>">
 		
@@ -184,9 +169,6 @@
 		        </button>
 		
 		    </a>
-		
-		
-		    <!-- ELIMINA PRODOTTO -->
 		
 		    <form
 		        action="<%=request.getContextPath()%>/DeleteProdottoAdminServlet"

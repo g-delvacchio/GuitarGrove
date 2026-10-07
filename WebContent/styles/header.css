@@ -93,6 +93,12 @@
     padding: 10px 5px;
     border: 1px solid rgba(0,0,0,1);
     background: white;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.search-form button:hover {
+    transform: scale(1.05);
 }
 
 /* INPUT */

@@ -68,11 +68,12 @@
             <input type="text"
                    id="searchInput"
                    name="q"
-                   placeholder="Cerca...">
+                   placeholder="Inserisci nome del prodotto da ricercare..."
+                   autocomplete="off">
 
             <span>&nbsp;</span>
 
-            <button type="submit">Scopri</button>
+            <button type="submit">Vai al catalogo</button>
 
             <!-- AJAX suggestions -->
             <div id="suggestions" class="suggestions"></div>

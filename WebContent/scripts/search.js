@@ -19,9 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         timeout = setTimeout(() => {
 
-            //Utilizzo di AJAX
             fetch(contextPath + "/SearchServlet?q=" + encodeURIComponent(query))
-                .then(res => res.json()) //Utilizzo di JSON
+                .then(res => res.json())
                 .then(data => {
 
                     box.innerHTML = "";
@@ -51,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 200);
     });
 
-    // chiudi dropdown cliccando fuori
     document.addEventListener("click", function (e) {
         if (!e.target.closest(".search-form")) {
             box.classList.remove("show");

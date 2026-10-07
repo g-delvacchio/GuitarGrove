@@ -93,6 +93,18 @@
     margin: 2px;
 }
 
+.cart .back-container {
+    align-self: flex-start;
+    margin-left: 0;
+    margin-bottom: 5px;
+    padding: 0;
+}
+
+.cart .back-container button {
+    border: none;
+    border-radius: 0;
+}
+
 /* RESPONSIVE */
 @media (max-width: 654px) {
 

@@ -27,9 +27,6 @@ public class AdminOrdiniServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        /*
-         * CONTROLLO ADMIN
-         */
         HttpSession session = request.getSession(false);
 
         if (session == null) {
@@ -43,19 +40,11 @@ public class AdminOrdiniServlet extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/index.jsp");
             return;
         }
-
-
-        /*
-         * PARAMETRI DEI FILTRI
-         */
+        
         String dataDaParam = request.getParameter("dataDa");
         String dataAParam = request.getParameter("dataA");
         String clienteParam = request.getParameter("cliente");
 
-
-        /*
-         * CONVERSIONE DATE
-         */
         LocalDate dataDa = null;
         LocalDate dataA = null;
 
@@ -79,10 +68,6 @@ public class AdminOrdiniServlet extends HttpServlet {
             return;
         }
 
-
-        /*
-         * CONTROLLO INTERVALLO DATE
-         */
         if (dataDa != null && dataA != null && dataDa.isAfter(dataA)) {
 
             response.sendRedirect(
@@ -93,10 +78,6 @@ public class AdminOrdiniServlet extends HttpServlet {
             return;
         }
 
-
-        /*
-         * CLIENTE SELEZIONATO
-         */
         Integer clienteId = null;
 
         if (clienteParam != null && !clienteParam.isBlank()) {
@@ -124,40 +105,19 @@ public class AdminOrdiniServlet extends HttpServlet {
             ProdottoDAO prodottoDAO = new ProdottoDAO();
             UtenteDAO utenteDAO = new UtenteDAO();
 
-
-            /*
-             * RECUPERA TUTTI GLI ORDINI
-             */
             List<Acquisto> ordini = acquistoDAO.doRetrieveAll();
 
-
-            /*
-             * LISTA CHE CONTERRA' SOLO GLI ORDINI
-             * CHE RISPETTANO I FILTRI
-             */
             List<Map<String, Object>> result = new ArrayList<>();
 
 
             for (Acquisto ordine : ordini) {
 
-
-                /*
-                 * ===========================
-                 * FILTRO CLIENTE
-                 * ===========================
-                 */
                 if (clienteId != null
                         && ordine.getUserId() != clienteId) {
 
                     continue;
                 }
 
-
-                /*
-                 * ===========================
-                 * FILTRO DATA DA
-                 * ===========================
-                 */
                 if (dataDa != null) {
 
                     LocalDateTime inizioGiorno =
@@ -170,22 +130,11 @@ public class AdminOrdiniServlet extends HttpServlet {
                     }
                 }
 
-
-                /*
-                 * ===========================
-                 * FILTRO DATA A
-                 * ===========================
-                 */
                 if (dataA != null) {
 
                     LocalDateTime fineGiorno =
                             dataA.plusDays(1).atStartOfDay();
 
-                    /*
-                     * Se l'ordine è uguale o successivo
-                     * all'inizio del giorno successivo,
-                     * non rientra nell'intervallo.
-                     */
                     if (!ordine.getDataAcquisto()
                             .isBefore(fineGiorno)) {
 
@@ -193,28 +142,13 @@ public class AdminOrdiniServlet extends HttpServlet {
                     }
                 }
 
-
-                /*
-                 * ===========================
-                 * ORDINE VALIDO
-                 * ===========================
-                 */
-
                 Map<String, Object> row = new HashMap<>();
 
-
-                /*
-                 * Recupero cliente
-                 */
                 Utente u =
                         utenteDAO.doRetrieveByKey(
                                 ordine.getUserId()
                         );
 
-
-                /*
-                 * Recupero prodotti dell'ordine
-                 */
                 List<ProdottoAcquistato> prodottiAcquistati =
                         paDAO.doRetrieveByCond(
                                 "order_id="
@@ -251,26 +185,12 @@ public class AdminOrdiniServlet extends HttpServlet {
                 result.add(row);
             }
 
-
-            /*
-             * ===========================
-             * LISTA CLIENTI PER SELECT
-             * ===========================
-             */
             List<Utente> utenti =
                     utenteDAO.doRetrieveAll();
 
-
-            /*
-             * DATI PASSATI ALLA JSP
-             */
             request.setAttribute("ordini", result);
             request.setAttribute("utenti", utenti);
 
-
-            /*
-             * FORWARD
-             */
             request.getRequestDispatcher(
                     "/WEB-INF/view/admin/ordini_admin.jsp"
             ).forward(request, response);

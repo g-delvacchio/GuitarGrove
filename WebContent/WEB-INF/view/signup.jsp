@@ -36,50 +36,42 @@
                   novalidate
                   onsubmit="return checkSignup(this)">
 
-                <!-- USERNAME -->
                 <label for="username">Username:</label>
                 <input class="inputField" type="text" id="username" name="username"
                        required onchange="validateUsername()">
                 <span id="errorUsername"></span><br>
 
-                <!-- NOME -->
                 <label for="nome">Nome:</label>
                 <input class="inputField" type="text" id="nome" name="nome"
                        required onchange="validateNome()">
                 <span id="errorName"></span><br>
 
-                <!-- COGNOME -->
                 <label for="cognome">Cognome:</label>
                 <input class="inputField" type="text" id="cognome" name="cognome"
                        required onchange="validateCognome()">
                 <span id="errorLastname"></span><br>
 
-                <!-- EMAIL -->
                 <label for="email">Email:</label>
                 <input class="inputField" type="email" id="email" name="email"
                        required onchange="validateEmail()">
                 <span id="errorEmail"></span><br>
 
-                <!-- PASSWORD -->
                 <label for="password">Password:</label>
                 <input class="inputField" type="password" id="password" name="password"
                        required onchange="validatePassword()">
                 <span id="errorpswd"></span><br>
 
-                <!-- CONFERMA PASSWORD -->
                 <label for="conferma_password">Conferma Password:</label>
                 <input class="inputField" type="password" id="conferma_password"
                        name="conferma_password"
                        required onchange="pswMatching()">
                 <span id="matchError"></span><br>
 
-                <!-- TELEFONO -->
                 <label for="telefono">Telefono:</label>
                 <input class="inputField" type="tel" id="telefono" name="telefono"
                        required onchange="validateTelefono()">
                 <span id="errorTelefono"></span><br>
 
-                <!-- INDIRIZZO -->
                 <h3>Indirizzo</h3>
 
                 <label for="paese">Paese:</label>

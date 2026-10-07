@@ -13,7 +13,7 @@
     <jsp:include page="WEB-INF/view/header.jsp" />
 
     <main>
-    <!-- PRODOTTI -->
+    
     <section class="featured-products">
 
         <h1>Prodotti in evidenza</h1>
@@ -84,7 +84,7 @@
                 <h3>SM58</h3>
                 <p>Shure</p>
                 <p>Microfoni</p>
-                <p class="price">€ 109</p>
+                <p class="price">€ 119</p>
                 <a href="<%=request.getContextPath()%>/ProdottoGuitarGrove?id=46">
                     Vedi prodotto </a>
             </div>
@@ -101,7 +101,7 @@
 
             <div class="product-card">
                 <div class="product-image"><img src="<%=request.getContextPath()%>/images/products/gibson/SG_Standard.jpeg" alt="Immagine prodotto"></div>
-                <h3>SG Standard 1599</h3>
+                <h3>SG Standard</h3>
                 <p>Gibson</p>
                 <p>Chitarra elettrica</p>
                 <p class="price">€ 1599</p>
@@ -111,7 +111,7 @@
 
             <div class="product-card">
                 <div class="product-image"><img src="<%=request.getContextPath()%>/images/products/gibson/J-45_Standard.jpeg" alt="Immagine prodotto"></div>
-                <h3>J-45 Standard'1</h3>
+                <h3>J-45 Standard</h3>
                 <p>Gibson</p>
                 <p>Chitarra Acustica</p>
                 <p class="price">€ 2899</p>
@@ -142,7 +142,6 @@
 
     </section>
 
-    <!-- CATEGORIE VISIBILI (HOME) -->
     <section class="categories-section">
 
         <h1>Categorie</h1>
@@ -204,7 +203,6 @@
 
     </section>
 
-        <!-- MARCHE -->
         <section class="brands-section">
 
             <h1>Marche</h1>

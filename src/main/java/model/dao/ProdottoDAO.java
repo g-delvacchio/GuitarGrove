@@ -224,7 +224,7 @@ public class ProdottoDAO {
 
         List<Prodotto> list = new ArrayList<>();
 
-        String sql = "SELECT * FROM prodotto WHERE nome LIKE ? LIMIT 10";
+        String sql = "SELECT * FROM prodotto WHERE attivo = TRUE AND nome LIKE ? LIMIT 10";
 
         try (Connection con = ConPool.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {

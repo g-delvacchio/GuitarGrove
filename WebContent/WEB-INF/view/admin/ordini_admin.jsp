@@ -2,9 +2,6 @@
 <%@ page import="java.util.*, model.bean.*" %>
 
 <%
-    /*
-     * CONTROLLO ADMIN
-     */
     Utente u = (Utente) session.getAttribute("user");
 
     if (u == null || !u.isAdmin()) {
@@ -14,10 +11,6 @@
         return;
     }
 
-
-    /*
-     * DATI PASSATI DALLA SERVLET
-     */
     List<Map<String, Object>> ordini =
             (List<Map<String, Object>>)
                     request.getAttribute("ordini");
@@ -26,13 +19,6 @@
             (List<Utente>)
                     request.getAttribute("utenti");
 
-
-    /*
-     * VALORI ATTUALI DEI FILTRI
-     *
-     * Servono per mantenere compilati
-     * i campi dopo aver premuto Filtra.
-     */
     String dataDa =
             request.getParameter("dataDa");
 
@@ -58,11 +44,8 @@
         GuitarGrove - Ordini Admin
     </title>
 
-    <link rel="stylesheet"
-          href="<%=request.getContextPath()%>/styles/style.css">
-
-    <link rel="stylesheet"
-          href="<%=request.getContextPath()%>/styles/ordini_admin.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/style.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/ordini_admin.css">
 
 </head>
 
@@ -75,11 +58,6 @@
 
 <h1>Ordini effettuati</h1>
 
-
-<!-- ================================================= -->
-<!-- TORNA INDIETRO -->
-<!-- ================================================= -->
-
 <div class="back-container">
 
     <a href="<%=request.getContextPath()%>/Admin">
@@ -91,12 +69,6 @@
     </a>
 
 </div>
-
-
-
-<!-- ================================================= -->
-<!-- ERRORI FILTRI -->
-<!-- ================================================= -->
 
 <% if (error != null) { %>
 
@@ -125,12 +97,6 @@
 
 <% } %>
 
-
-
-<!-- ================================================= -->
-<!-- FILTRI -->
-<!-- ================================================= -->
-
 <div class="filtri-ordini">
 
     <h2>Filtra ordini</h2>
@@ -138,9 +104,6 @@
 
     <form action="<%=request.getContextPath()%>/AdminOrdiniServlet"
           method="get">
-
-
-        <!-- DATA DA -->
 
         <label for="dataDa">
             Data da:
@@ -151,9 +114,6 @@
                name="dataDa"
                value="<%= dataDa != null ? dataDa : "" %>">
 
-
-        <!-- DATA A -->
-
         <label for="dataA">
             Data a:
         </label>
@@ -162,9 +122,6 @@
                id="dataA"
                name="dataA"
                value="<%= dataA != null ? dataA : "" %>">
-
-
-        <!-- CLIENTE -->
 
         <label for="cliente">
             Cliente:
@@ -206,15 +163,9 @@
 
         </select>
 
-
-        <!-- FILTRA -->
-
         <button type="submit">
             Filtra
         </button>
-
-
-        <!-- AZZERA FILTRI -->
 
         <a href="<%=request.getContextPath()%>/AdminOrdiniServlet">
 
@@ -229,12 +180,6 @@
 
 </div>
 
-
-
-<!-- ================================================= -->
-<!-- RISULTATI -->
-<!-- ================================================= -->
-
 <% if (ordini == null || ordini.isEmpty()) { %>
 
 
@@ -244,9 +189,6 @@
 
 
 <% } else { %>
-
-
-    <!-- NUMERO ORDINI -->
 
     <p>
         <strong>
@@ -276,15 +218,9 @@
 
         <div class="ordine-card">
 
-
-            <!-- ID ORDINE -->
-
             <h3>
                 Ordine #<%= a.getOrderId() %>
             </h3>
-
-
-            <!-- INFORMAZIONI ORDINE -->
 
             <div class="ordine-info">
 
@@ -357,9 +293,6 @@
 
                 </p>
 
-
-                <!-- INDIRIZZO -->
-
                 <p>
 
                     <strong>
@@ -380,12 +313,6 @@
 
 
             </div>
-
-
-
-            <!-- ================================================= -->
-            <!-- PRODOTTI ORDINE -->
-            <!-- ================================================= -->
 
             <div class="ordine-prodotti">
 

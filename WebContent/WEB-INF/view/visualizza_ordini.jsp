@@ -21,9 +21,8 @@
     Map<Integer, List<Map<String, Object>>> prodottiPerOrdine = (Map<Integer, List<Map<String, Object>>>) request.getAttribute("prodottiPerOrdine");
 %>
 
-<section style="padding:40px;">
+<section class="orders-container">
 
-    <!-- BOTTONE TORNA INDIETRO -->
     <div class="back-container">
         <a href="<%=request.getContextPath()%>/Account">
             <button type="button">← Torna indietro</button>
@@ -40,7 +39,7 @@
 
     <% for (Acquisto ordine : ordini) { %>
 
-    <div style="border:1px solid #ccc; margin-bottom:20px; padding:15px;">
+    <div class="order-box">
 
         <h3>Ordine #<%= ordine.getOrderId() %></h3>
 

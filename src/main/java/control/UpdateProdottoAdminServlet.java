@@ -76,10 +76,6 @@ public class UpdateProdottoAdminServlet extends HttpServlet {
 
             switch (action) {
 
-
-                /*
-                 * MODIFICA VELOCE STOCK
-                 */
                 case "stock":
 
                     int stock =
@@ -97,10 +93,6 @@ public class UpdateProdottoAdminServlet extends HttpServlet {
 
                     break;
 
-
-                /*
-                 * MODIFICA VELOCE STATO
-                 */
                 case "attivo":
 
                     int attivo =
@@ -114,10 +106,6 @@ public class UpdateProdottoAdminServlet extends HttpServlet {
 
                     break;
 
-
-                /*
-                 * MODIFICA COMPLETA PRODOTTO
-                 */
                 case "completo":
 
                     String nome =
@@ -147,10 +135,6 @@ public class UpdateProdottoAdminServlet extends HttpServlet {
                     String attivoParam =
                             request.getParameter("attivo");
 
-
-                    /*
-                     * VALIDAZIONE CAMPI
-                     */
                     if (nome == null || nome.trim().isEmpty()
                             || marca == null || marca.trim().isEmpty()
                             || modello == null || modello.trim().isEmpty()
@@ -204,11 +188,6 @@ public class UpdateProdottoAdminServlet extends HttpServlet {
                         return;
                     }
 
-
-                    /*
-                     * AGGIORNAMENTO BEAN
-                     */
-
                     p.setNome(nome.trim());
 
                     p.setMarca(marca.trim());
@@ -237,10 +216,6 @@ public class UpdateProdottoAdminServlet extends HttpServlet {
                             immagine.trim()
                     );
 
-
-                    /*
-                     * UPDATE DATABASE
-                     */
                     dao.doSaveOrUpdate(p);
 
                     break;
