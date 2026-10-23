@@ -1,6 +1,4 @@
-/* =========================
-   PAGINA PRODOTTO
-========================= */
+/* PAGINA PRODOTTO */
 
 .prodotto {
     flex: 1;
@@ -10,7 +8,8 @@
     padding: 40px;
 }
 
-/* contenitore principale */
+/* CONTENITORE PRINCIPALE */
+
 .product-container {
     display: flex;
     gap: 40px;
@@ -26,6 +25,7 @@
 }
 
 /* IMMAGINE */
+
 .product-image-box {
     flex: 1;
     display: flex;
@@ -33,7 +33,8 @@
     align-items: center;
 }
 
-/* immagine prodotto */
+/* IMMAGINE PRODOTTO */
+
 .product-image-p {
     width: 100%;
     height: 500px;
@@ -56,6 +57,7 @@
 
 
 /* INFO */
+
 .product-info {
     flex: 1;
     display: flex;
@@ -78,7 +80,8 @@
     font-size: 1.8rem;
 }
 
-/* bottone carrello */
+/* BUTTON CARRELLO */
+
 .btn-add-cart {
     margin-top: 20px;
     padding: 12px;
@@ -94,9 +97,7 @@
     background: #81A6C6;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE */
 
 @media (max-width: 768px) {
 

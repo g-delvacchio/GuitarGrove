@@ -1,6 +1,4 @@
-/* =========================
-   CHECKOUT
-========================= */
+/* CHECKOUT */
 
 .checkout {
     flex: 1;
@@ -11,12 +9,14 @@
     align-items: center;
 }
 
-/* titolo */
+/* TITOLO */
+
 .checkout h1 {
     margin-bottom: 10px;
 }
 
 /* BOX GENERICO */
+
 .box {
     width: 100%;
     max-width: 900px;
@@ -31,14 +31,13 @@
     gap: 15px;
 }
 
-/* titoli sezioni */
+/* SEZIONI TITOLI */
+
 .box h2 {
     margin: 0;
 }
 
-/* =========================
-   TABELLE
-========================= */
+/* TABELLE */
 
 .box table {
     width: 100%;
@@ -61,9 +60,7 @@
     background: #AACDDC;
 }
 
-/* =========================
-   FORM PAGAMENTO
-========================= */
+/* FORM PAGAMENTO */
 
 .box form {
     display: flex;
@@ -83,7 +80,8 @@
     background: white;
 }
 
-/* bottone acquisto */
+/* BUTTON ACQUISTO */
+
 .box button {
     margin-top: 10px;
     padding: 12px;
@@ -99,9 +97,7 @@
     background: #81A6C6;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE SCHERMI FINO A 768px */
 
 @media (max-width: 768px) {
 
@@ -136,6 +132,8 @@
         font-size: 1rem;
     }
 }
+
+/* RESPONSIVE SCHERMI FINO A 480px */
 
 @media (max-width: 480px) {
 

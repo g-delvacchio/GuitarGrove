@@ -1,6 +1,4 @@
-/* =========================
-   PRODUTTI ADMIN PAGE
-========================= */
+/* PRODUTTI ADMIN PAGE */
 
 h1 {
     text-align: center;
@@ -8,11 +6,13 @@ h1 {
 }
 
 /* CONTAINER GENERALE */
+
 .admin-products {
     padding: 20px;
 }
 
 /* TABELLA */
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -22,6 +22,7 @@ table {
 }
 
 /* HEADER TABELLA */
+
 th {
     background: #AACDDC;
     padding: 12px;
@@ -30,6 +31,7 @@ th {
 }
 
 /* CELLE */
+
 td {
     padding: 10px;
     border: 1px solid rgba(0,0,0,0.15);
@@ -38,6 +40,7 @@ td {
 }
 
 /* INPUT STOCK */
+
 td input[type="number"] {
     width: 80px;
     padding: 6px;
@@ -47,6 +50,7 @@ td input[type="number"] {
 }
 
 /* SELECT ATTIVO */
+
 td select {
     padding: 6px;
     border-radius: 6px;
@@ -55,6 +59,7 @@ td select {
 }
 
 /* BOTTONI GENERICI */
+
 button {
     padding: 8px 12px;
     border: 1px solid rgba(0,0,0,0.2);
@@ -65,11 +70,13 @@ button {
 }
 
 /* HOVER BOTTONI */
+
 button:hover {
     background: #AACDDC;
 }
 
 /* BOTTONE ELIMINA */
+
 button[style*="red"] {
     color: red;
 }
@@ -79,12 +86,15 @@ button[style*="red"]:hover {
 }
 
 /* FORM INLINE NELLA TABELLA */
+
 td form {
     display: flex;
     flex-direction: column;
     gap: 5px;
     align-items: center;
 }
+
+/* RESPONSIVE SCHERMI FINO A 768px */
 
 @media (max-width: 768px) {
 
@@ -110,7 +120,8 @@ td form {
     }
 }
 
-/* SCHERMI MOLTO PICCOLI */
+/* RESPONSIVE SCHERMI FINO A 480px */
+
 @media (max-width: 480px) {
 
     table {

@@ -8,19 +8,22 @@
     gap: 20px;
 }
 
-/* titolo */
+/* TITOLO */
+
 .cart h1 {
     text-align: center;
     font-size: 2rem;
 }
 
-/* messaggi */
+/* MESSAGGI */
+
 .cart p {
     font-size: 1rem;
     text-align: center;
 }
 
 /* TABELLA */
+
 .cart table {
     width: 100%;
     max-width: 900px;
@@ -31,7 +34,8 @@
     overflow: hidden;
 }
 
-/* celle */
+/* CELLE */
+
 .cart th,
 .cart td {
     padding: 12px;
@@ -39,18 +43,21 @@
     border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
-/* header tabella */
+/* HEADER TABELLA */
+
 .cart th {
     background: #AACDDC;
     font-weight: bold;
 }
 
-/* righe hover */
+/* HOVER RIGHE */
+
 .cart tr:hover {
     background: rgba(0,0,0,0.05);
 }
 
-/* bottoni + e - */
+/* BUTTON "+","-" */
+
 .cart button {
     padding: 6px 10px;
     border: 1px solid rgba(0,0,0,1);
@@ -64,13 +71,15 @@
     background: #AACDDC;
 }
 
-/* totale */
+/* TOTALE */
+
 .cart h2 {
     font-size: 1.5rem;
     margin-top: 10px;
 }
 
-/* link checkout / login */
+/* LINK CHECKOUT/LOGIN */
+
 .cart a {
     display: inline-block;
     margin-top: 10px;
@@ -87,7 +96,8 @@
     background: #81A6C6;
 }
 
-/* container azioni inline ( + / - ) */
+/* CONTAINER AZIONI INLINE ( + / - ) */
+
 .cart td form {
     display: inline-block;
     margin: 2px;
@@ -105,7 +115,8 @@
     border-radius: 0;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE SCHERMI FINO A 654px*/
+
 @media (max-width: 654px) {
 
     .cart {
@@ -117,7 +128,6 @@
         font-size: 1.4rem;
     }
 
-    /* rende la tabella scrollabile invece di "rompersi" */
     .cart table {
         display: block;
         width: 100%;
@@ -130,16 +140,14 @@
     .cart td {
         padding: 8px;
         font-size: 0.85rem;
-        white-space: nowrap; /* evita che il testo vada a capo e distrugga la riga */
+        white-space: nowrap;
     }
 
-    /* immagini più compatte */
     .cart td img {
         max-width: 60px;
         height: auto;
     }
 
-    /* bottoni più piccoli ma cliccabili */
     .cart button {
         padding: 5px 8px;
         font-size: 0.85rem;
@@ -156,7 +164,8 @@
     }
 }
 
-/*schermi molto piccoli*/
+/* RESPONSIVE SCHERMI FINO A 480px */
+
 @media (max-width: 480px) {
 
     .cart {

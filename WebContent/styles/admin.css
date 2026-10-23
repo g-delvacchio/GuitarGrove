@@ -1,6 +1,4 @@
-/* =========================
-   ADMIN PANEL
-========================= */
+/* ADMIN PANEL */
 
 .admin-panel {
     flex: 1;
@@ -12,13 +10,15 @@
     gap: 30px;
 }
 
-/* titolo */
+/* TITOLO */
+
 .admin-panel h1 {
     margin-bottom: 10px;
     text-align: center;
 }
 
-/* contenitore bottoni */
+/* CONTENITORE BUTTON */
+
 .admin-buttons {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -27,12 +27,14 @@
     max-width: 800px;
 }
 
-/* link che contiene il bottone */
+/* LINK NEL BUTTON */
+
 .admin-buttons a {
     text-decoration: none;
 }
 
-/* bottoni */
+/* BUTTON */
+
 .admin-buttons button {
     width: 100%;
     padding: 20px;
@@ -42,20 +44,18 @@
     font-weight: bold;
     font-size: 1rem;
     cursor: pointer;
-
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s;
 }
 
-/* hover effetto card */
+/* EFFETTO HOVER CARD */
+
 .admin-buttons button:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     background: #AACDDC;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE */
 
 @media (max-width: 768px) {
 

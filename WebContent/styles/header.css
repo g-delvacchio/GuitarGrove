@@ -14,7 +14,8 @@
     width: 100%;
 }
 
-/* wrapper del logo */
+/* WRAPPER DEL LOGO */
+
 .logo {
     margin: 0;
     display: flex;
@@ -22,7 +23,8 @@
     align-items: center;
 }
 
-/* link del logo */
+/* LINK DEL LOGO */
+
 .logo a {
     display: flex;
     justify-content: center;
@@ -30,7 +32,8 @@
     text-decoration: none;
 }
 
-/* immagine logo */
+/* IMMAGINE LOGO */
+
 .logo-img {
     height: 70px;
     width: auto;
@@ -233,9 +236,9 @@
 }
 
 /* RESPONSIVE */
+
 @media (max-width: 768px) {
 
-    /* blocco principale: mai più overflow orizzontale */
     .top-header {
         display: flex;
         flex-direction: row;
@@ -248,7 +251,6 @@
         box-sizing: border-box;
     }
 
-    /* logo sempre centrato ma non “bloccante” */
     .logo-container {
         flex: 1 1 100%;
         display: flex;
@@ -259,7 +261,6 @@
         height: 40px;
     }
 
-    /* icone sotto o a lato ma non fisse */
     .user-actions {
         position: static;
         transform: none;
@@ -301,14 +302,13 @@
 
     #searchInput {
         width: 100%;
-        min-width: 0; /* fondamentale per evitare overflow */
+        min-width: 0;
     }
 
     .search-form button {
         white-space: nowrap;
     }
 
-    /* sicurezza anti scroll laterale */
     body {
         overflow-x: hidden;
     }

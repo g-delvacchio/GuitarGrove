@@ -8,14 +8,16 @@
     gap: 20px;
 }
 
-/* titolo principale */
+/* TITOLO PRINCIPALE */
+
 .account h1 {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 10px;
 }
 
-/* box generici */
+/* BOX GENERICI */
+
 .account-box {
     width: 100%;
     max-width: 700px;
@@ -26,20 +28,23 @@
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* titoli box */
+/* TITOLI BOX */
+
 .account-box h2 {
     text-align: center;
     margin-bottom: 15px;
     font-size: 1.4rem;
 }
 
-/* testi */
+/* TESTI */
+
 .account-box p {
     margin: 6px 0;
     font-size: 1rem;
 }
 
-/* bottone "visualizza ordini" */
+/* BUTTON "VISUALIZZA ORDINI" */
+
 .account button {
     padding: 10px 15px;
     background: #AACDDC;
@@ -54,6 +59,7 @@
 }
 
 /* FORM PASSWORD */
+
 .account form {
     display: flex;
     flex-direction: column;
@@ -72,12 +78,14 @@
     background: white;
 }
 
-/* errori password */
+/* ERRORI PASSWORD */
+
 .account span {
     font-size: 0.85rem;
 }
 
-/* azioni finali */
+/* AZIONI FINALI */
+
 .account-actions {
     display: flex;
     gap: 15px;
@@ -86,7 +94,8 @@
     margin-top: 10px;
 }
 
-/* bottoni azioni */
+/* BUTTON AZIONI */
+
 .account-actions button {
     padding: 10px 15px;
     border: 1px solid rgba(0,0,0,1);
@@ -101,17 +110,20 @@
     box-shadow: 0 3px 8px rgba(0,0,0,0.2);
 }
 
-/* bottone admin */
+/* BUTTON ADMIN */
+
 .account-actions button[style*="81A6C6"] {
     background: #81A6C6 !important;
 }
 
-/* delete account evidenziato */
+/* DELETE ACCOUNT EVIDENZIATO */
+
 .account-actions button[style*="red"] {
     background: #ffdddd !important;
 }
 
 /* RESPONSIVE */
+
 @media (max-width: 768px) {
 
     .account {

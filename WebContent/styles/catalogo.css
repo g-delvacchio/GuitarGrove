@@ -1,6 +1,4 @@
-/* =========================
-   CATALOGO
-========================= */
+/* CATALOGO */
 
 .catalog {
     padding: 20px;
@@ -9,9 +7,7 @@
     gap: 30px;
 }
 
-/* =========================
-   FILTRI
-========================= */
+/* FILTRI */
 
 #filtri {
     background: #F3E3D0;
@@ -54,9 +50,7 @@
     background: #81A6C6;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE */
 
 @media (max-width: 768px) {
 

@@ -9,7 +9,8 @@
     background:white;
 }
 
-/* box centrale */
+/* BOX CENTRALE */
+
 .signup section{
     width:100%;
     max-width:550px;
@@ -20,34 +21,39 @@
     box-shadow:0 4px 15px rgba(0,0,0,0.08);
 }
 
-/* titolo */
+/* TITOLO */
+
 .signup h2{
     text-align:center;
     margin-bottom:20px;
     font-size:1.6rem;
 }
 
-/* errore */
+/* ERRORE */
+
 .signup p{
     text-align:center;
     margin-bottom:15px;
     font-weight:bold;
 }
 
-/* form layout */
+/* FORM LAYOUT */
+
 .signup form{
     display:flex;
     flex-direction:column;
     gap:10px;
 }
 
-/* label */
+/* LABEL */
+
 .signup label{
     font-weight:bold;
     font-size:0.9rem;
 }
 
-/* input e textarea */
+/* INPUT E TEXTAREA */
+
 .signup input,
 .signup textarea{
     padding:10px;
@@ -57,20 +63,23 @@
     width:100%;
 }
 
-/* textarea più alta */
+/* TEXTAREA PIU' ALTA */
+
 .signup textarea{
     min-height:70px;
     resize:vertical;
 }
 
-/* messaggi errori JS */
+/* MESSAGGI ERRORI JS */
+
 .signup span{
     font-size:0.8rem;
     color:#b00020;
     margin-top:-5px;
 }
 
-/* bottone submit */
+/* BUTTON SUBMIT */
+
 .signup input[type="submit"]{
     margin-top:15px;
     padding:12px;
@@ -86,7 +95,8 @@
     background:#81A6C6;
 }
 
-/* link login */
+/* LINK LOGIN */
+
 .signup a{
     color:black;
     font-weight:bold;
@@ -98,6 +108,7 @@
 }
 
 /*RESPONSIVE*/
+
 @media (max-width: 768px) {
 
     .signup {

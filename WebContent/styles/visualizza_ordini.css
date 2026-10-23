@@ -1,6 +1,4 @@
-/* =========================
-   ORDINI UTENTE
-========================= */
+/* ORDINI UTENTE */
 
 h1 {
     text-align: center;
@@ -8,11 +6,13 @@ h1 {
 }
 
 /* CONTAINER GENERALE */
+
 .orders-container {
     padding: 40px;
 }
 
 /* BOX ORDINE */
+
 .order-box {
     border: 1px solid rgba(0,0,0,0.2);
     background: #F3E3D0;
@@ -22,16 +22,19 @@ h1 {
 }
 
 /* TITOLO ORDINE */
+
 .order-box h3 {
     margin-bottom: 10px;
 }
 
 /* INFO ORDINE */
+
 .order-box p {
     margin: 5px 0;
 }
 
 /* TABELLA PRODOTTI */
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -41,6 +44,7 @@ table {
 }
 
 /* HEADER */
+
 th {
     background: #AACDDC;
     padding: 10px;
@@ -48,6 +52,7 @@ th {
 }
 
 /* CELLE */
+
 td {
     padding: 10px;
     border: 1px solid rgba(0,0,0,0.15);
@@ -55,11 +60,13 @@ td {
 }
 
 /* STATO ORDINE*/
+
 .order-status {
     font-weight: bold;
 }
 
 /* RESPONSIVE */
+
 @media (max-width: 768px) {
 
     .orders-container {

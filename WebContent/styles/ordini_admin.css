@@ -1,6 +1,4 @@
-/* =========================
-   ORDINI ADMIN
-========================= */
+/* ORDINI ADMIN */
 
 body {
     display: flex;
@@ -8,15 +6,14 @@ body {
     min-height: 100vh;
 }
 
-/* titolo */
+/* TITOLO */
+
 h1 {
     text-align: center;
     margin: 20px 0;
 }
 
-/* =========================
-   LISTA ORDINI
-========================= */
+/* LISTA ORDINI */
 
 .ordini-container {
     display: flex;
@@ -25,7 +22,8 @@ h1 {
     padding: 20px;
 }
 
-/* card ordine */
+/* CARD ORIDNE */
+
 .ordine-card {
     background: #F3E3D0;
     border: 1px solid rgba(0,0,0,1);
@@ -38,18 +36,21 @@ h1 {
     gap: 10px;
 }
 
-/* header ordine */
+/* HEADER ORDINE */
+
 .ordine-card h3 {
     margin: 0;
 }
 
-/* info utente e totale */
+/* INFO UTENTE E TOTALE */
+
 .ordine-info p {
     margin: 0;
     font-size: 0.95rem;
 }
 
-/* prodotti */
+/* PRODOTTI */
+
 .ordine-prodotti {
     margin-top: 10px;
     padding-left: 20px;
@@ -60,16 +61,15 @@ h1 {
     font-size: 0.9rem;
 }
 
-/* empty state */
+/* EMPTY STATE */
+
 .empty {
     text-align: center;
     font-weight: bold;
     margin-top: 20px;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE */
 
 @media (max-width: 768px) {
 

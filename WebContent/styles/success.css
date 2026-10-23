@@ -1,6 +1,4 @@
-/* =========================
-   PAGINA SUCCESS
-========================= */
+/* PAGINA SUCCESS */
 
 body {
     display: flex;
@@ -8,7 +6,8 @@ body {
     min-height: 100vh;
 }
 
-/* contenitore principale */
+/* CONTENINTORE PRINCIPALE */
+
 .success {
     flex: 1;
     display: flex;
@@ -17,7 +16,8 @@ body {
     padding: 40px;
 }
 
-/* box messaggio */
+/* BOX MESSAGGIO */
+
 .success-box {
     background: #F3E3D0;
     border: 1px solid rgba(0,0,0,1);
@@ -33,18 +33,21 @@ body {
     gap: 15px;
 }
 
-/* titolo */
+/* TITOLO */
+
 .success-box h1 {
     margin: 0;
     font-size: 2rem;
 }
 
-/* testo */
+/* TESTO */
+
 .success-box p {
     font-size: 1.1rem;
 }
 
-/* link continua shopping */
+/* LINK CONTINUA SHOPPING */
+
 .success-box a {
     display: inline-block;
     margin-top: 10px;
@@ -62,9 +65,7 @@ body {
     background: #81A6C6;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE */
 
 @media (max-width: 768px) {
 
