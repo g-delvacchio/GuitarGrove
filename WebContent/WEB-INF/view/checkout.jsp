@@ -38,6 +38,7 @@
       action="<%=request.getContextPath()%>/CheckoutControl"
       method="post"
       novalidate
+      autocomplete="off"
       onsubmit="return checkCheckout(this)">
       
       <div class="box">

@@ -34,6 +34,7 @@
                   method="post"
                   id="regForm"
                   novalidate
+                  autocomplete="off"
                   onsubmit="return checkSignup(this)">
 
                 <label for="username">Username:</label>

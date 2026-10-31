@@ -96,6 +96,7 @@
               action="<%=request.getContextPath()%>/ChangePasswordServlet"
               method="post"
               novalidate
+              autocomplete="off"
               onsubmit="return checkChangePassword(this);">
 
             <label for="oldPassword">

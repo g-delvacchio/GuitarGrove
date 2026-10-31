@@ -74,7 +74,8 @@
             ? "UpdateProdottoAdminServlet"
             : "InsertProdottoAdminServlet"
         %>"
-        method="post">
+        method="post"
+        autocomplete="off">
 
 
         <% if (modifica) { %>

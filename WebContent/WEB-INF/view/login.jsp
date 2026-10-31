@@ -30,6 +30,7 @@
                       action="<%=request.getContextPath()%>/Login"
                       method="post"
                       novalidate
+                      autocomplete="off"
                       onsubmit="return checkLogin()">
 
                     <label for="email">Email</label>
